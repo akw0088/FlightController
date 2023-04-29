@@ -4,4 +4,12 @@ Figured I should design a PCB and a flight controller seemed pretty approachable
 
 For the most part the schematic is the most useful, as I find this is really an exercise in picking chips and connecting nets together, layout can be automated quite a bit, but I'm sure manual part placement will occur as well as setting the 30x30 size and 4mm mounting holes.
 
+For manufacturing I'll probably use PCBWay
+
+
+Links to drone meshes stuff:
+https://oshwlab.com/mesh.drone/mesh-fc-v1-backup
+https://www.pcbway.com/project/member/?bmbno=82F43017-E23A-4A
+https://www.youtube.com/c/DroneMesh
+
 
