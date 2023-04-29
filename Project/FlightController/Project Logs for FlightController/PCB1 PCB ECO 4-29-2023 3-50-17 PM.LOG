@@ -1,0 +1,158 @@
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0805
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Pin To Net: Unknown Pin: Pin C1-1
+Add Pin To Net: Unknown Pin: Pin C1-2
+Add Pin To Net: Unknown Pin: Pin C2-1
+Add Pin To Net: Unknown Pin: Pin C2-2
+Add Pin To Net: Unknown Pin: Pin C3-1
+Add Pin To Net: Unknown Pin: Pin C3-2
+Add Pin To Net: Unknown Pin: Pin C4-1
+Add Pin To Net: Unknown Pin: Pin C4-2
+Add Pin To Net: Unknown Pin: Pin C5-1
+Add Pin To Net: Unknown Pin: Pin C5-2
+Add Pin To Net: Unknown Pin: Pin C6-1
+Add Pin To Net: Unknown Pin: Pin C6-2
+Add Pin To Net: Unknown Pin: Pin C6_G-1
+Add Pin To Net: Unknown Pin: Pin C6_G-2
+Add Pin To Net: Unknown Pin: Pin C7-1
+Add Pin To Net: Unknown Pin: Pin C7-2
+Add Pin To Net: Unknown Pin: Pin C8-1
+Add Pin To Net: Unknown Pin: Pin C8-2
+Add Pin To Net: Unknown Pin: Pin C9-1
+Add Pin To Net: Unknown Pin: Pin C9-2
+Add Pin To Net: Unknown Pin: Pin C10-1
+Add Pin To Net: Unknown Pin: Pin C10-2
+Add Pin To Net: Unknown Pin: Pin C11-1
+Add Pin To Net: Unknown Pin: Pin C11-2
+Add Pin To Net: Unknown Pin: Pin C13_G-1
+Add Pin To Net: Unknown Pin: Pin C13_G-2
+Add Pin To Net: Unknown Pin: Pin C16_VREG-1
+Add Pin To Net: Unknown Pin: Pin C16_VREG-2
+Add Pin To Net: Unknown Pin: Pin C17_VREG-1
+Add Pin To Net: Unknown Pin: Pin C17_VREG-2
+Add Pin To Net: Unknown Pin: Pin C20-2
+Add Pin To Net: Unknown Pin: Pin C30-1
+Add Pin To Net: Unknown Pin: Pin C30-2
+Add Pin To Net: Unknown Pin: Pin C50-1
+Add Pin To Net: Unknown Pin: Pin C50-2
+Add Pin To Net: Unknown Pin: Pin C70-1
+Add Pin To Net: Unknown Pin: Pin C70-2
+Add Pin To Net: Unknown Pin: Pin C90-1
+Add Pin To Net: Unknown Pin: Pin C90-2
+Add Pin To Net: Unknown Pin: Pin C100-1
+Add Pin To Net: Unknown Pin: Pin C100-2
+Add Pin To Net: Unknown Pin: Pin C110-1
+Add Pin To Net: Unknown Pin: Pin C110-2
+Add Pin To Net: Unknown Pin: Pin C_IN5v-1
+Add Pin To Net: Unknown Pin: Pin C_IN5v-2
+Add Pin To Net: Unknown Pin: Pin C_OUT5v-1
+Add Pin To Net: Unknown Pin: Pin C_OUT5v-2
+Add Pin To Net: Unknown Pin: Pin R2_G-1
+Add Pin To Net: Unknown Pin: Pin R2_G-2
+Add Pin To Net: Unknown Pin: Pin R3_USB-1
+Add Pin To Net: Unknown Pin: Pin R3_USB-2
+Add Pin To Net: Unknown Pin: Pin R6_USB-1
+Add Pin To Net: Unknown Pin: Pin R6_USB-2
+Add Pin To Net: Unknown Pin: Pin R8-1
+Add Pin To Net: Unknown Pin: Pin R8-2
+Add Pin To Net: Unknown Pin: Pin R9-1
+Add Pin To Net: Unknown Pin: Pin R20-1
+Add Pin To Net: Unknown Pin: Pin R20-2
+Add Pin To Net: Unknown Pin: Pin R30-1
+Add Pin To Net: Unknown Pin: Pin R30-2
+Add Pin To Net: Unknown Pin: Pin R40-1
+Add Pin To Net: Unknown Pin: Pin R40-2
+Add Pin To Net: Unknown Pin: Pin R50-1
+Add Pin To Net: Unknown Pin: Pin R50-2
+Add Pin To Net: Unknown Pin: Pin R60-1
+Add Pin To Net: Unknown Pin: Pin R60-2
+Add Pin To Net: Unknown Pin: Pin R70-1
+Add Pin To Net: Unknown Pin: Pin R70-2
+Change Net Name : Old Net Name=VideoOut New Net Name=GND
+Added Pin To Net: NetName=Net3.3V_2 Pin=3.3V-2
+Added Net: Name=Net3.3V_2
+Added Pin To Net: NetName=Net5V_2 Pin=5V-2
+Added Net: Name=Net5V_2
+Added Pin To Net: NetName=Net9V_2 Pin=9V-2
+Added Net: Name=Net9V_2
+Added Pin To Net: NetName=NetDFU_1 Pin=DFU-1
+Added Pin To Net: NetName=NetDFU_1 Pin=U1-60
+Added Net: Name=NetDFU_1
+Added Pin To Net: NetName=NetR4_LED_1 Pin=Status-2
+Added Net: Name=NetR4_LED_1
+Add Class Member: Failed to add class member : Component C1 Capacitor
+Add Class Member: Failed to add class member : Component C2 Capacitor
+Add Class Member: Failed to add class member : Component C3 Capacitor
+Add Class Member: Failed to add class member : Component C4 Capacitor
+Add Class Member: Failed to add class member : Component C5 Capacitor
+Add Class Member: Failed to add class member : Component C6_G Capacitor
+Add Class Member: Failed to add class member : Component C6 Capacitor
+Add Class Member: Failed to add class member : Component C7 Capacitor
+Add Class Member: Failed to add class member : Component C8 Capacitor
+Add Class Member: Failed to add class member : Component C9 Capacitor
+Add Class Member: Failed to add class member : Component C10 Capacitor
+Add Class Member: Failed to add class member : Component C11 Capacitor
+Add Class Member: Failed to add class member : Component C13_G Capacitor
+Add Class Member: Failed to add class member : Component C16_VREG Capacitor
+Add Class Member: Failed to add class member : Component C17_VREG Capacitor
+Add Class Member: Failed to add class member : Component C20 Capacitor
+Add Class Member: Failed to add class member : Component C30 Capacitor
+Add Class Member: Failed to add class member : Component C50 Capacitor
+Add Class Member: Failed to add class member : Component C70 Capacitor
+Add Class Member: Failed to add class member : Component C90 Capacitor
+Add Class Member: Failed to add class member : Component C100 Capacitor
+Add Class Member: Failed to add class member : Component C110 Capacitor
+Add Class Member: Failed to add class member : Component C_IN5v Capacitor
+Add Class Member: Failed to add class member : Component C_OUT5v Capacitor
+Add Class Member: Failed to add class member : Component R2_G Resistor
+Add Class Member: Failed to add class member : Component R3_USB Resistor
+Add Class Member: Failed to add class member : Component R4_LED Resistor
+Add Class Member: Failed to add class member : Component R5_LED Resistor
+Add Class Member: Failed to add class member : Component R6_USB Resistor
+Add Class Member: Failed to add class member : Component R8 Resistor
+Add Class Member: Failed to add class member : Component R9_LED Resistor
+Add Class Member: Failed to add class member : Component R9 Resistor
+Add Class Member: Failed to add class member : Component R10_LED Resistor
+Add Class Member: Failed to add class member : Component R20 Resistor
+Add Class Member: Failed to add class member : Component R30 Resistor
+Add Class Member: Failed to add class member : Component R40 Resistor
+Add Class Member: Failed to add class member : Component R50 Resistor
+Add Class Member: Failed to add class member : Component R60 Resistor
+Add Class Member: Failed to add class member : Component R70 Resistor

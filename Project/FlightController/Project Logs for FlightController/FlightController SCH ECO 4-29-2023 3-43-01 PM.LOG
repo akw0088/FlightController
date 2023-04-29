@@ -1,0 +1,10 @@
+Remove Pin=R4_LED-2 From Net=LED0
+Remove Pin=R5_LED-2 From Net=GYRO_1_CS
+Remove Pin=R9_LED-2 From Net=5V
+Remove Pin=R10_LED-2 From Net=9V
+Change Component Designator: OldDesignator=LED1 NewDesignator=Status
+Change Component Designator: OldDesignator=LED2 NewDesignator=3.3V
+Change Component Designator: OldDesignator=LED3 NewDesignator=5V
+Change Component Designator: OldDesignator=LED4 NewDesignator=9V
+Change Component Designator: OldDesignator=SW_BOOT NewDesignator=DFU
+Change Component Designator: OldDesignator=SW_RESET NewDesignator=RST
