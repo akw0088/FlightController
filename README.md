@@ -8,8 +8,11 @@ For manufacturing I'll probably use PCBWay
 
 
 Links to drone meshes stuff:
+
 https://oshwlab.com/mesh.drone/mesh-fc-v1-backup
+
 https://www.pcbway.com/project/member/?bmbno=82F43017-E23A-4A
+
 https://www.youtube.com/c/DroneMesh
 
 
