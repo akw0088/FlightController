@@ -16,3 +16,6 @@ https://www.pcbway.com/project/member/?bmbno=82F43017-E23A-4A
 https://www.youtube.com/c/DroneMesh
 
 
+Version with OSD chip:
+
+https://easyeda.com/modules/DroneMesh-OpenFC-Schematic_02d7d85512334af9a66e7b7c09a951f3
