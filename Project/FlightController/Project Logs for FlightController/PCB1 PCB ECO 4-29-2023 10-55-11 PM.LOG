@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=GND Pin=U5-1
+Removed Pin From Net: NetName=5V Pin=U5-4
+Change Component Footprint: Designator=U5 Old Footprint=TO-252_N New Footprint=SOT-89_N
+Change Component Comment : Designator=U5 Old Comment=LD1117DT50TR New Comment=L78L05ABUTR
+Change Managed Component Library Link : Designator=U5 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=E5064A4C-FA30-4C8F-BA5A-C03BD2A34CDB New ItemGUID=0C855598-2B5C-418F-94A3-C593ED1A3E71 Old RevisionGUID=A8F5E7B1-59DD-4D94-81A4-B6260933002F New RevisionGUID=2BBB3113-97F1-432C-A4ED-4B49B1AA14F1
+Change component parameters: Designator = "U5" ("U5"); Footprint = "TO-252_N"; UniqueID = "\GDYWIGSY" ("\GDYWIGSY")
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.st.com"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00000446.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "DatasheetVersion"; Value = "1/02/2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "3-Pin SOT-89 Package 1.5 mm Pitch, 4.1 mm Lead Span"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "SOT-89"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageVersion"; Value = "2011"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Pin To Net: Unknown Pin: Pin R4_LED-1
+Add Pin To Net: Unknown Pin: Pin R5_LED-1
+Add Pin To Net: Unknown Pin: Pin R9_LED-1
+Add Pin To Net: Unknown Pin: Pin R10_LED-1
+Added Pin To Net: NetName=5V Pin=U5-1
+Added Pin To Net: NetName=GND Pin=U5-2
+Added Pin To Net: NetName=GND Pin=U5-2
+Add Class Member: Failed to add class member : Component R4_LED Resistor
+Add Class Member: Failed to add class member : Component R5_LED Resistor
+Add Class Member: Failed to add class member : Component R9_LED Resistor
+Add Class Member: Failed to add class member : Component R10_LED Resistor
