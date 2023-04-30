@@ -1,0 +1,60 @@
+Update Managed Component 3.3V From CMP-08952-000013-1[SML-210MTT86] To CMP-08952-000013-1[SML-210MTT86] in FlightController.SchDoc
+Update Managed Component 5V From CMP-08952-000013-1[SML-210MTT86] To CMP-08952-000013-1[SML-210MTT86] in FlightController.SchDoc
+Update Managed Component 9V From CMP-08952-000013-1[SML-210MTT86] To CMP-08952-000013-1[SML-210MTT86] in FlightController.SchDoc
+Replace Part C1 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C2 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C3 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C4 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C5 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C6 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C6_G Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C7 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C8 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C9 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C10 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C11 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C13_G Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C16_VREG Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C17_VREG Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C20 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C30 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C50 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C70 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C90 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C100 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C110 Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C_IN5v Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Replace Part C_OUT5v Capacitor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Capacitor from Simulation Generic Components.IntLib
+Update Managed Component CD1 From CMP-2000-05248-1[502774-0891] To CMP-2000-05248-1[502774-0891] in FlightController.SchDoc
+Update Managed Component D1 From CMP-0417-00003-1[BAT54C] To CMP-0417-00003-1[BAT54C] in FlightController.SchDoc
+Update Managed Component DFU From CMP-08834-000005-1[B3U-1000P-B] To CMP-08834-000005-1[B3U-1000P-B] in FlightController.SchDoc
+Update Managed Component J1 From CMP-2000-05827-1[105017-0001] To CMP-2000-05827-1[105017-0001] in FlightController.SchDoc
+Replace Part R2_G Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R3_USB Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R4_LED Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R5_LED Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R6_USB Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R8 Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R9 Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R9_LED Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R10_LED Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R20 Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R30 Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R40 Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R50 Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R60 Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Replace Part R70 Resistor in C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc with Resistor from Simulation Generic Components.IntLib
+Update Managed Component RST From CMP-08834-000005-1[B3U-1000P-B] To CMP-08834-000005-1[B3U-1000P-B] in FlightController.SchDoc
+Update Managed Component Status From CMP-08952-000013-1[SML-210MTT86] To CMP-08952-000013-1[SML-210MTT86] in FlightController.SchDoc
+Update Managed Component U1 From CMP-12105-000139-1[STM32F722RET6] To CMP-12105-000139-1[STM32F722RET6] in FlightController.SchDoc
+Update Managed Component U1 From CMP-12105-000139-1[STM32F722RET6] To CMP-12105-000139-1[STM32F722RET6] in FlightController.SchDoc
+Update Managed Component U2 From CMP-2000-05008-1[MPU-6000] To CMP-2000-05008-1[MPU-6000] in FlightController.SchDoc
+Update Managed Component U2 From CMP-2000-05008-1[MPU-6000] To CMP-2000-05008-1[MPU-6000] in FlightController.SchDoc
+Update Managed Component U3 From CMP-2000-05076-3[BMP280] To CMP-2000-05076-3[BMP280] in FlightController.SchDoc
+Update Managed Component U4 From CMP-0062-01727-3[LM2940IMP-9.0/NOPB] To CMP-0062-01727-3[LM2940IMP-9.0/NOPB] in FlightController.SchDoc
+Update Managed Component U5 From CMP-0244-00108-1[LD1117DT50TR] To CMP-0244-00108-1[LD1117DT50TR] in FlightController.SchDoc
+Update Managed Component U6 From CMP-1679-00010-1[NCP1117ST33T3G] To CMP-1679-00010-1[NCP1117ST33T3G] in FlightController.SchDoc
+Update Managed Component U7 From CMP-0244-00406-1[L78L05ABUTR] To CMP-0244-00406-1[L78L05ABUTR] in FlightController.SchDoc
+Update Managed Component U8 From CMP-05676-000004-1[MAX7456EUI+T] To CMP-05676-000004-1[MAX7456EUI+T] in FlightController.SchDoc
+Update Managed Component X1 From CMP-2100-03620-1[CSTCE8M00G55-R0] To CMP-2100-03620-1[CSTCE8M00G55-R0] in FlightController.SchDoc
+Update Managed Component Y2 From CMP-27762-013610-1[ABM3-27.000MHZ-D2Y-T] To CMP-27762-013610-1[ABM3-27.000MHZ-D2Y-T] in FlightController.SchDoc
