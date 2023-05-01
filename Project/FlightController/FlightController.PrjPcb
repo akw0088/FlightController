@@ -123,6 +123,150 @@ DocumentUniqueId=
 DocumentPath=Project Outputs for FlightController\Design Rule Check - PCB1.html
 DItemRevisionGUID=
 
+[GeneratedDocument2]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.G1
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.G2
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.G3
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.G4
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.G5
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.G6
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.GM
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for FlightController\Gerber\PCB1.REP
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1.REP
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Copper_Signal_1.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Copper_Signal_2.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Copper_Signal_3.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Copper_Signal_4.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Copper_Signal_5.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Copper_Signal_6.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Copper_Signal_Bot.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Copper_Signal_Top.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Legend_Bot.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Legend_Top.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_NPTH_Drill.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Paste_Bot.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Paste_Top.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Profile.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_PTH_Drill.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Soldermask_Bot.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument37]
+DocumentPath=Project Outputs for FlightController\GerberX2\PCB1_Soldermask_Top.gbr
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
@@ -375,7 +519,9 @@ OutputName13=Schematic Prints
 OutputDocumentPath13=
 OutputVariantName13=
 OutputDefault13=0
-PageOptions13=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+PageOptions13=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=0.49|XCorrection=1.00|YCorrection=1.00|PrintKind=0|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=0|PaperKind=Letter|PaperIndex=1
+Configuration13_Name1=OutputConfigurationParameter1
+Configuration13_Item1=Record=SchPrintView|ShowNoERC=True|ShowParamSet=True|ShowProbe=True|ShowBlanket=True|NoERCSymbolsToShow="Thin Cross","Thick Cross","Small Cross",Checkbox,Triangle|ShowNote=True|ShowNoteCollapsed=True|ShowOpenEnds=True|ExpandDesignator=True|ExpandNetLabel=False|ExpandPort=False|ExpandSheetNum=False|ExpandDocNum=False|PrintArea=0|PrintAreaRect.X1=0|PrintAreaRect.Y1=0|PrintAreaRect.X2=0|PrintAreaRect.Y2=0|DocumentPath=C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.SchDoc
 OutputType14=SimView Print
 OutputName14=SimView Prints
 OutputDocumentPath14=
