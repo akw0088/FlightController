@@ -1,0 +1,19 @@
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Component: Footprint Not Found 0402
+Add Pin To Net: Unknown Pin: Pin R4_LED-1
+Add Pin To Net: Unknown Pin: Pin R4_LED-2
+Add Pin To Net: Unknown Pin: Pin R5_LED-1
+Add Pin To Net: Unknown Pin: Pin R5_LED-2
+Add Pin To Net: Unknown Pin: Pin R9_LED-1
+Add Pin To Net: Unknown Pin: Pin R9_LED-2
+Add Pin To Net: Unknown Pin: Pin R10_LED-1
+Add Pin To Net: Unknown Pin: Pin R10_LED-2
+Added Pin To Net: NetName=VDD Pin=U1-19
+Added Pin To Net: NetName=GND Pin=U1-47
+Added Pin To Net: NetName=GND Pin=U1-63
+Add Class Member: Failed to add class member : Component R4_LED Resistor
+Add Class Member: Failed to add class member : Component R5_LED Resistor
+Add Class Member: Failed to add class member : Component R9_LED Resistor
+Add Class Member: Failed to add class member : Component R10_LED Resistor

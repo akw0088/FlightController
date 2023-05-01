@@ -1,0 +1,81 @@
+Added Component: Designator=P1(JST-SM08B-SRSS-TB_V)
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.jst-mfg.com/product/pdf/eng/eSR.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "11/2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "JST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.jst.com/home2.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "No of Positions"; Value = "8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "Male Header, Pitch 1 mm, 1 x 8 Position, Height 2.95 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "SM08B-SRSS-TB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Style/Orientation"; Value = "RightAngleHeader/Plug"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Crimp"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "ShroudedHeader"; VariantName = "[No Variations]"
+Added Component: Designator=P2(JST-SM06B-SRSS-TB_V)
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://datasheet.ciiva.com/26894/getdatasheetpartid-708885-26894671.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "11/2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "JST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.jst.com/home2.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "No of Positions"; Value = "6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "Male Header, Pitch 1 mm, 1 X 6 Position, Height 2.9 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "SM06B-SRSS-TB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Style/Orientation"; Value = "RightAngleHeader/Plug"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "ShroudedHeader"; VariantName = "[No Variations]"
+Added Component: Designator=P3(JST-SM06B-SRSS-TB_V)
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://datasheet.ciiva.com/26894/getdatasheetpartid-708885-26894671.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "11/2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "JST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.jst.com/home2.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "No of Positions"; Value = "6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "Male Header, Pitch 1 mm, 1 X 6 Position, Height 2.9 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "SM06B-SRSS-TB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Style/Orientation"; Value = "RightAngleHeader/Plug"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Solder"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "ShroudedHeader"; VariantName = "[No Variations]"
+Added Component: Designator=P5(JST-SM03B-SRSS-TB_V)
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://datasheet.ciiva.com/26894/getdatasheetpartid-708885-26894671.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "11/2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "JST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.jst.com/home2.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "No of Positions"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "Male Header, Pitch 1 mm, 1 x 3 Position, Height 2.9 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "SM03B-SRSS-TB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Style/Orientation"; Value = "RightAngleHeader/Plug"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Crimp"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "ShroudedHeader"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=UART6_RX Pin=P1-1
+Added Pin To Net: NetName=ADC_CURR Pin=P1-2
+Added Pin To Net: NetName=S4 Pin=P1-3
+Added Pin To Net: NetName=S3 Pin=P1-4
+Added Pin To Net: NetName=S2 Pin=P1-5
+Added Pin To Net: NetName=S1 Pin=P1-6
+Added Pin To Net: NetName=VBAT_PAD Pin=P1-7
+Added Pin To Net: NetName=GND Pin=P1-8
+Added Pin To Net: NetName=GND Pin=P1-MP1
+Added Pin To Net: NetName=GND Pin=P1-MP2
+Added Pin To Net: NetName=UART1_RX Pin=P2-1
+Added Pin To Net: NetName=UART1_TX Pin=P2-2
+Added Pin To Net: NetName=GND Pin=P2-3
+Added Pin To Net: NetName=5V Pin=P2-4
+Added Pin To Net: NetName=CAMERA_CONTROL Pin=P2-5
+Added Pin To Net: NetName=VideoIn Pin=P2-6
+Added Pin To Net: NetName=GND Pin=P2-MP1
+Added Pin To Net: NetName=GND Pin=P2-MP2
+Added Pin To Net: NetName=GND Pin=P3-MP1
+Added Pin To Net: NetName=GND Pin=P3-MP2
+Added Pin To Net: NetName=5V Pin=P5-1
+Added Pin To Net: NetName=GND Pin=P5-2
+Added Pin To Net: NetName=BEEPER_PIN Pin=P5-3
+Added Pin To Net: NetName=GND Pin=P5-MP1
+Added Pin To Net: NetName=GND Pin=P5-MP2
+Added Member To Class: ClassName=FlightController Member=Component P1 SM08B-SRSS-TB(LF)(SN)
+Added Member To Class: ClassName=FlightController Member=Component P2 SM06B-SRSS-TB(LF)(SN)
+Added Member To Class: ClassName=FlightController Member=Component P3 SM06B-SRSS-TB(LF)(SN)
+Added Member To Class: ClassName=FlightController Member=Component P5 SM03B-SRSS-TB(LF)(SN)

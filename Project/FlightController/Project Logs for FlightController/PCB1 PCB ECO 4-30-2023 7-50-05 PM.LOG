@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=U? Old Footprint=FP-DCY0004A-IPC_B New Footprint=FP-DRB0008J-IPC_C
+Change Component Comment : Designator=U? Old Comment=UA78M05CDCYG3 New Comment=TLV76790QWDRBRQ1
+Change Managed Component Library Link : Designator=U? Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=AEBFB4BF-3CF2-45F1-B11C-BF0B6E7A609A New ItemGUID=9490310C-FBEA-4A1E-B56D-131419238AD8 Old RevisionGUID=8598DC7F-2F95-42BC-B78C-41B6DE389AD1 New RevisionGUID=EE8BD74C-9F9A-4868-9F09-E3FAC0B50624
+Change component parameters: Designator = "U?" ("U?"); Footprint = "FP-DCY0004A-IPC_B"; UniqueID = "\EJBVNOMJ" ("\EJBVNOMJ")
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"

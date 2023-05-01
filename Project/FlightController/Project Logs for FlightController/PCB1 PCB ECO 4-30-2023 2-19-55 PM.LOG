@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=MAX7456_SPI_CS Pin=R2.2K_1-2
+Removed Pin From Net: NetName=MAX7456_SPI_CS Pin=R2.2K_2-2
+Removed Pin From Net: NetName=GND Pin=U8-4
+Removed Pin From Net: NetName=NetR2.2K_3_2 Pin=U8-12
+Removed Pin From Net: NetName=MAX7456_SPI_CS Pin=U8-17
+Removed Pin From Net: NetName=MAX7456_SPI_CS Pin=U8-18
+Change Component Designator: OldDesignator=  NewDesignator=R4_LED
+Added Pin To Net: NetName=VideoIn Pin=R100K_1-2
+Added Pin To Net: NetName=NetC0.1uf_6_1 Pin=U8-4
+Added Pin To Net: NetName=NetR2.2K_3_2 Pin=U8-18
+Added Pin To Net: NetName=NetR2.2K_1_2 Pin=R2.2K_1-2
+Added Pin To Net: NetName=NetR2.2K_1_2 Pin=U8-12
+Added Net: Name=NetR2.2K_1_2
+Added Pin To Net: NetName=NetR2.2K_2_2 Pin=R2.2K_2-2
+Added Pin To Net: NetName=NetR2.2K_2_2 Pin=U8-17
+Added Net: Name=NetR2.2K_2_2
+Added Member To Class: ClassName=FlightController Member=Component R4_LED CRCW06031K00FKEA
+Added Member To Class: ClassName=FlightController Member=Component U8 MAX7456EUI+T
