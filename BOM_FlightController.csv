@@ -1,0 +1,78 @@
+﻿Line #,Name,Description,Designator,Revision ID,Revision Status,Manufacturer 1,Manufacturer Part Number 1,Manufacturer Lifecycle 1,Supplier 1,Supplier Part Number 1,Supplier Unit Price 1,Supplier Subtotal 1
+,Capacitor 4.7µF +/-40% 25V 0805,"Chip Capacitor, 4.7µF +/-40%, 25V, 0805, Thickness 1.45 mm",,CMP-001-00080-4,Up to date,Kyocera AVX,08053D475MAT2A,Volume Production,Mouser,581-08053D475MAT2A,0,0
+,Capacitor 100 nF +/-10% 50 V 0805,"Chip Capacitor, 100 nF, +/- 10%, 50 V, 0805 (2012 Metric)",,CMP-001-00018-6,Up to date,Yageo,CC0805KRX7R9BB104,Volume Production,Digi-Key,311-1140-1-ND,0,0
+,Capacitor 100 nF +/-10% 50 V 0805,"Chip Capacitor, 100 nF, +/- 10%, 50 V, 0805 (2012 Metric)",,CMP-001-00018-6,Up to date,Yageo,CC0805KRX7R9BB104,Volume Production,Digi-Key,311-1140-1-ND,0,0
+,Capacitor 100 nF +/-10% 50 V 0805,"Chip Capacitor, 100 nF, +/- 10%, 50 V, 0805 (2012 Metric)",,CMP-001-00018-6,Up to date,Yageo,CC0805KRX7R9BB104,Volume Production,Digi-Key,311-1140-1-ND,0,0
+,Resistor 100k +/-1% 0805 125 mW,"Chip Resistor, 100 KOhm, +/- 1%, 0.125 W, -55 to 155 degC, 0805 (2012 Metric)",,CMP-009-00024-5,Up to date,Yageo,RC0805FR-07100KL,Volume Production,Digi-Key,311-100KCRCT-ND,0,0
+,SML-210MTT86,LED GREEN CLEAR 0805 SMD,3.3V,CMP-08952-000013-1,Up to date,Rohm,SML-210MTT86,Not Recommended for New Design,Future Electronics,9239369,0.34,1.36
+,SML-210MTT86,LED GREEN CLEAR 0805 SMD,5V,CMP-08952-000013-1,Up to date,Rohm,SML-210MTT86,Not Recommended for New Design,Future Electronics,9239369,0.34,1.36
+,SML-210MTT86,LED GREEN CLEAR 0805 SMD,9V,CMP-08952-000013-1,Up to date,Rohm,SML-210MTT86,Not Recommended for New Design,Future Electronics,9239369,0.34,1.36
+,GRM155R71C104KA88D,CAP CER 0.1UF 16V X7R 0402,C0.1uf_1,CMP-2100-03641-2,Up to date,Murata,GRM155R71C104KA88D,Not Recommended for New Design,Mouser,81-GRM155R71C104KA88,0.017,0.17
+,GRM155R71C104KA88D,CAP CER 0.1UF 16V X7R 0402,C0.1uf_2,CMP-2100-03641-2,Up to date,Murata,GRM155R71C104KA88D,Not Recommended for New Design,Mouser,81-GRM155R71C104KA88,0.017,0.17
+,GRM155R71C104KA88D,CAP CER 0.1UF 16V X7R 0402,C0.1uf_5,CMP-2100-03641-2,Up to date,Murata,GRM155R71C104KA88D,Not Recommended for New Design,Mouser,81-GRM155R71C104KA88,0.017,0.17
+,GRM155R71C104KA88D,CAP CER 0.1UF 16V X7R 0402,C0.1uf_6,CMP-2100-03641-2,Up to date,Murata,GRM155R71C104KA88D,Not Recommended for New Design,Mouser,81-GRM155R71C104KA88,0.017,0.17
+,GRM155R71C104KA88D,CAP CER 0.1UF 16V X7R 0402,C0.1uf_7,CMP-2100-03641-2,Up to date,Murata,GRM155R71C104KA88D,Not Recommended for New Design,Mouser,81-GRM155R71C104KA88,0.017,0.17
+,GRM155R71C104KA88D,CAP CER 0.1UF 16V X7R 0402,C0.1uf_8,CMP-2100-03641-2,Up to date,Murata,GRM155R71C104KA88D,Not Recommended for New Design,Mouser,81-GRM155R71C104KA88,0.017,0.17
+,GRM188R71C474KA88D,"Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 0.47uF, X7R, 15%, 10%, 16V",C0.47uf_1,CMP-2006-02860-2,Up to date,Murata,GRM188R71C474KA88D,Volume Production,Newark,03AC2674,0.021,0.042
+,GRM188R71C474KA88D,"Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 0.47uF, X7R, 15%, 10%, 16V",C0.47uf_2,CMP-2006-02860-2,Up to date,Murata,GRM188R71C474KA88D,Volume Production,Newark,03AC2674,0.021,0.042
+,GRM155R61A105KE15D,CAP CER 1UF 10V X5R 0402,C1u_1,CMP-2008-04556-2,Up to date,Murata,GRM155R61A105KE15D,Obsolete,Arrow Electronics,GRM155R61A105KE15D,0.0046,46
+,GRM155R61A105KE15D,CAP CER 1UF 10V X5R 0402,C1u_2,CMP-2008-04556-2,Up to date,Murata,GRM155R61A105KE15D,Obsolete,Arrow Electronics,GRM155R61A105KE15D,0.0046,46
+,GRM188R71H222KA01D,"Chip Capacitor, 2.2 nF, +/- 10%, 50 V, -55 to 125 degC, 0603 (1608 Metric), RoHS, Tape and Reel",C2.2nf,CMP-2006-02908-5,Up to date,Murata,GRM188R71H222KA01D,Obsolete,Arrow Electronics,GRM188R71H222KA01D,0.0139,55.6
+,GRM188R71H222KA01D,"Chip Capacitor, 2.2 nF, +/- 10%, 50 V, -55 to 125 degC, 0603 (1608 Metric), RoHS, Tape and Reel",C2.2nf_1,CMP-2006-02908-5,Up to date,Murata,GRM188R71H222KA01D,Obsolete,Arrow Electronics,GRM188R71H222KA01D,0.0139,55.6
+,GRM188R71H103KA01D,"Chip Capacitor, 10 nF, +/- 10%, 50 V, -55 to 125 degC, 0603 (1608 Metric), RoHS, Tape and Reel",C10n_1,CMP-2100-03642-1,Up to date,Murata,GRM188R71H103KA01D,Obsolete,Arrow Electronics,GRM188R71H103KA01D,0.0042,16.8
+,GRM188R60J106ME47D,"Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 10uF, X5R, 15%, 20%, 6.3V",C10u_1,CMP-2006-02792-2,Up to date,Murata,GRM188R60J106ME47D,Volume Production,Newark,03AC2652,0.029,0.116
+,GRM188R60J106ME47D,"Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 10uF, X5R, 15%, 20%, 6.3V",C10uf_2,CMP-2006-02792-2,Up to date,Murata,GRM188R60J106ME47D,Volume Production,Newark,03AC2652,0.029,0.116
+,GRM188R60J106ME47D,"Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 10uF, X5R, 15%, 20%, 6.3V",C10uf_3,CMP-2006-02792-2,Up to date,Murata,GRM188R60J106ME47D,Volume Production,Newark,03AC2652,0.029,0.116
+,GRM188R60J106ME47D,"Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 10uF, X5R, 15%, 20%, 6.3V",C10uf_4,CMP-2006-02792-2,Up to date,Murata,GRM188R60J106ME47D,Volume Production,Newark,03AC2652,0.029,0.116
+,GRM21BR60J226ME39L,"Chip Multilayer Ceramic Capacitors for General Purpose, 0805, 22uF, X5R, 15%, 20%, 6.3V",C22_uf,CMP-2007-03385-2,Up to date,Murata,GRM21BR60J226ME39L,Volume Production,Newark,24R6338,0.077,0.231
+,GRM21BR60J226ME39L,"Chip Multilayer Ceramic Capacitors for General Purpose, 0805, 22uF, X5R, 15%, 20%, 6.3V",C22_uf_2,CMP-2007-03385-2,Up to date,Murata,GRM21BR60J226ME39L,Volume Production,Newark,24R6338,0.077,0.231
+,GRM21BR60J226ME39L,"Chip Multilayer Ceramic Capacitors for General Purpose, 0805, 22uF, X5R, 15%, 20%, 6.3V",C22uf_4,CMP-2007-03385-2,Up to date,Murata,GRM21BR60J226ME39L,Volume Production,Newark,24R6338,0.077,0.231
+,C0402C104K8PACTU,CAP CER 0.1UF 10V X5R 0402,C100nf,CMP-2008-02046-2,Up to date,KEMET,C0402C104K8PACTU,Volume Production,Newark,49H5566,0.005,0.04
+,C0402C104K8PACTU,CAP CER 0.1UF 10V X5R 0402,C100nf_1,CMP-2008-02046-2,Up to date,KEMET,C0402C104K8PACTU,Volume Production,Newark,49H5566,0.005,0.04
+,C0402C104K8PACTU,CAP CER 0.1UF 10V X5R 0402,C100nf_2,CMP-2008-02046-2,Up to date,KEMET,C0402C104K8PACTU,Volume Production,Newark,49H5566,0.005,0.04
+,C0402C104K8PACTU,CAP CER 0.1UF 10V X5R 0402,C100nf_3,CMP-2008-02046-2,Up to date,KEMET,C0402C104K8PACTU,Volume Production,Newark,49H5566,0.005,0.04
+,C0402C104K8PACTU,CAP CER 0.1UF 10V X5R 0402,C100nf_4,CMP-2008-02046-2,Up to date,KEMET,C0402C104K8PACTU,Volume Production,Newark,49H5566,0.005,0.04
+,C0402C104K8PACTU,CAP CER 0.1UF 10V X5R 0402,C100nf_5,CMP-2008-02046-2,Up to date,KEMET,C0402C104K8PACTU,Volume Production,Newark,49H5566,0.005,0.04
+,C0402C104K8PACTU,CAP CER 0.1UF 10V X5R 0402,C100nf_B1,CMP-2008-02046-2,Up to date,KEMET,C0402C104K8PACTU,Volume Production,Newark,49H5566,0.005,0.04
+,C0402C104K8PACTU,CAP CER 0.1UF 10V X5R 0402,C100nf_B2,CMP-2008-02046-2,Up to date,KEMET,C0402C104K8PACTU,Volume Production,Newark,49H5566,0.005,0.04
+,GRM32ER60J107ME20L,CAP CER 100UF 6.3V X5R 1210,C100uf_3,CMP-2000-05259-2,Up to date,Murata,GRM32ER60J107ME20L,Not Recommended for New Design,Future Electronics,2114105,1.23,2.46
+,GRM32ER60J107ME20L,CAP CER 100UF 6.3V X5R 1210,C100uf_4,CMP-2000-05259-2,Up to date,Murata,GRM32ER60J107ME20L,Not Recommended for New Design,Future Electronics,2114105,1.23,2.46
+,502774-0891,"Micro SD Memory Card Connector, 0.5 A, 10 V (DC), -25 to 85 degC, 8-Pin SMT, RoHS, Tape and Reel",CD1,CMP-2000-05248-1,Up to date,Molex,5027740891,Unknown,Newark,67X4867,2.58,2.58
+,BAT54C,"Schottky Barrier Diode, 30 V, 2 uA, -55 to 150 degC, 3-Pin SOT23, RoHS, Tape and Reel",D1,CMP-0417-00003-1,Up to date,NXP Semiconductors,BAT54C,Unknown,,,,
+,105017-0001,"Micro-USB B Receptacle, Right Angle, Bottom Mount, Surface Mount, with Solder Tabs, -30 to 85 degC, 5-Pin USB, RoHS, Tape and Reel",J1,CMP-2000-05827-1,Up to date,Molex,1050170001,Volume Production,Newark,17AC5641,0.235,0.235
+,742792620,"SMD EMI Suppression Ferrite Bead WE-CBF, Z = 100 Ohm",L1,CMP-0220-00188-1,Up to date,Wurth Electronics,742792620,Volume Production,Newark,24AC5665,0.101,0.101
+,SM08B-SRSS-TB(LF)(SN),"Male Header, Pitch 1 mm, 1 x 8 Position, Height 2.95 mm, -25 to 85 degC, RoHS, Tape and Reel",P1,CMP-2000-07082-1,Up to date,JST,SM08B-SRSS-TB(LF)(SN),Unknown,Digi-Key,455-1808-1-ND,0.88,0.88
+,SM06B-SRSS-TB(LF)(SN),"Male Header, Pitch 1 mm, 1 x 6 Position, Height 2.95 mm, -25 to 85 degC, RoHS, Tape and Reel",P2,CMP-2000-07080-1,Up to date,JST,SM06B-SRSS-TB(LF)(SN),Volume Production,Digi-Key,455-1806-1-ND,0.78,1.56
+,SM06B-SRSS-TB(LF)(SN),"Male Header, Pitch 1 mm, 1 x 6 Position, Height 2.95 mm, -25 to 85 degC, RoHS, Tape and Reel",P3,CMP-2000-07080-1,Up to date,JST,SM06B-SRSS-TB(LF)(SN),Volume Production,Digi-Key,455-1806-1-ND,0.78,1.56
+,SM03B-SRSS-TB(LF)(SN),"Male Header, Pitch 1 mm, 1 x 3 Position, Height 2.9 mm, -25 to 85 degC, RoHS, Tape and Reel",P5,CMP-2000-07077-1,Up to date,JST,SM03B-SRSS-TB(LF)(SN),Unknown,Newark,33P8180,0.54,0.54
+,CRCW06031K00FKEA,"RES Thick Film, 1kΩ, 1%, 0.1W, 100ppm/°C, 0603",R1K_1,CMP-1666-00003-5,Up to date,Vishay Dale,CRCW06031K00FKEA,Volume Production,Newark,52K8016,0.005,0.035
+,CRCW06031K00FKEA,"RES Thick Film, 1kΩ, 1%, 0.1W, 100ppm/°C, 0603",R1K_2,CMP-1666-00003-5,Up to date,Vishay Dale,CRCW06031K00FKEA,Volume Production,Newark,52K8016,0.005,0.035
+,CRCW06031K00FKEA,"RES Thick Film, 1kΩ, 1%, 0.1W, 100ppm/°C, 0603",R1K_3,CMP-1666-00003-5,Up to date,Vishay Dale,CRCW06031K00FKEA,Volume Production,Newark,52K8016,0.005,0.035
+,CRCW06032K20FKEA,,R2.2K_1,CMP-2000-03167-1,Up to date,Vishay,CRCW06032K20FKEA,Volume Production,Arrow Electronics,CRCW06032K20FKEA,0.0248,0.0496
+,CRCW06032K20FKEA,,R2.2K_2,CMP-2000-03167-1,Up to date,Vishay,CRCW06032K20FKEA,Volume Production,Arrow Electronics,CRCW06032K20FKEA,0.0248,0.0496
+,CRCW06031K00FKEA,"RES Thick Film, 1kΩ, 1%, 0.1W, 100ppm/°C, 0603",R4_LED,CMP-1666-00003-5,Up to date,Vishay Dale,CRCW06031K00FKEA,Volume Production,Newark,52K8016,0.005,0.035
+,CRCW04024K70FKED,"RES Thick Film, 4.7kΩ, 1%, 0.063W, 100ppm/°C, 0402",R4.7K_1,CMP-2002-00051-3,Up to date,Vishay Dale,CRCW04024K70FKED,Unknown,,,,
+,CRCW06031K00FKEA,"RES Thick Film, 1kΩ, 1%, 0.1W, 100ppm/°C, 0603",R5_LED,CMP-1666-00003-5,Up to date,Vishay Dale,CRCW06031K00FKEA,Volume Production,Newark,52K8016,0.005,0.035
+,CRCW06031K00FKEA,"RES Thick Film, 1kΩ, 1%, 0.1W, 100ppm/°C, 0603",R9_LED,CMP-1666-00003-5,Up to date,Vishay Dale,CRCW06031K00FKEA,Volume Production,Newark,52K8016,0.005,0.035
+,CRCW06031K00FKEA,"RES Thick Film, 1kΩ, 1%, 0.1W, 100ppm/°C, 0603",R10_LED,CMP-1666-00003-5,Up to date,Vishay Dale,CRCW06031K00FKEA,Volume Production,Newark,52K8016,0.005,0.035
+,CRCW060310K0FKEA,"Chip Resistor, 10 KOhm, +/- 1%, 100 mW, -55 to 155 degC, 0603 (1608 Metric), RoHS, Tape and Reel",R10K_1,CMP-1666-00005-4,Up to date,Vishay,CRCW060310K0FKEA,Volume Production,Newark,52K8063,0.005,0.02
+,CRCW060310K0FKEA,"Chip Resistor, 10 KOhm, +/- 1%, 100 mW, -55 to 155 degC, 0603 (1608 Metric), RoHS, Tape and Reel",R10K_2,CMP-1666-00005-4,Up to date,Vishay,CRCW060310K0FKEA,Volume Production,Newark,52K8063,0.005,0.02
+,CRCW060310K0FKEA,"Chip Resistor, 10 KOhm, +/- 1%, 100 mW, -55 to 155 degC, 0603 (1608 Metric), RoHS, Tape and Reel",R10K_3,CMP-1666-00005-4,Up to date,Vishay,CRCW060310K0FKEA,Volume Production,Newark,52K8063,0.005,0.02
+,CRCW060310K0FKEA,"Chip Resistor, 10 KOhm, +/- 1%, 100 mW, -55 to 155 degC, 0603 (1608 Metric), RoHS, Tape and Reel",R10K_4,CMP-1666-00005-4,Up to date,Vishay,CRCW060310K0FKEA,Volume Production,Newark,52K8063,0.005,0.02
+,CRCW040222R0FKED,,R22_1,CMP-2002-08382-1,Up to date,Vishay,CRCW040222R0FKED,Volume Production,Newark,52K6848,0.003,0.006
+,CRCW040222R0FKED,,R22_2,CMP-2002-08382-1,Up to date,Vishay,CRCW040222R0FKED,Volume Production,Newark,52K6848,0.003,0.006
+,ERJ-3EKF75R0V,,R75_1,CMP-2000-00639-1,Up to date,Panasonic,ERJ-3EKF75R0V,Volume Production,Newark,65T8518,0.003,0.006
+,ERJ-3EKF75R0V,,R75_2,CMP-2000-00639-1,Up to date,Panasonic,ERJ-3EKF75R0V,Volume Production,Newark,65T8518,0.003,0.006
+,CRCW0603150RFKEA,"RES Thick Film, 150Ω, 1%, 0.1W, 100ppm/°C, 0603",R150_1,CMP-2000-03913-2,Up to date,Vishay,CRCW0603150RFKEA,Volume Production,Newark,52K8161,0.005,0.005
+,SML-210MTT86,LED GREEN CLEAR 0805 SMD,Status,CMP-08952-000013-1,Up to date,Rohm,SML-210MTT86,Not Recommended for New Design,Future Electronics,9239369,0.34,1.36
+,B3U-1000P-B,SWITCH TACTILE SPST-NO 0.05A 12V,SW1,CMP-08834-000005-1,Up to date,Omron,B3U-1000P-B,Volume Production,Newark,39M4616,0.66,0.66
+,STM32F722RET6,IC MCU 32BIT 512KB FLASH 64LQFP,U1,CMP-12105-000139-1,Up to date,STMicroelectronics,STM32F722RET6,Volume Production,,,,
+,MPU-6000,"3-Axis Gyroscope 3-Axis Accelerometer Motion Processing Unit with I2C and SPI, 2.5, 3 or 3.3 V, -40 to 85 degC, 24-Pin QFN, RoHS, Tape and Reel",U2,CMP-2000-05008-1,Up to date,TDK InvenSense,MPU-6000,Unknown,,,,
+,BMP280,SENSOR PRESSURE ABS,U3,CMP-2000-05076-3,Up to date,Bosch,BMP280,End of Life,,,,
+,TLV76790QWDRBRQ1,IC OPAMP,U4,CMP-04917-000367-1,Up to date,Texas Instruments,TLV76790QWDRBRQ1,Volume Production,Mouser,595-TLV76790QWDRBRQ1,1.49,2.98
+,UA78L05CPK,IC REG LINEAR 5V 100MA SOT89-3,U5,CMP-2000-07341-2,Up to date,Texas Instruments,UA78L05CPK,Volume Production,Digi-Key,296-13531-1-ND,0.49,0.49
+,LD1117S33TR,"Fixed Low Drop Positive Voltage Regulator, 3.3V, 4-Pin SOT-223, Tape and Reel",U6,CMP-0244-00310-1,Up to date,STMicroelectronics,LD1117S33TR,Volume Production,Newark,96AC0453,0.307,0.307
+,MAX7456EUI+T,IC DISPLAY 1CH W/EEPROM 28TSSOP,U8,CMP-05676-000004-1,Up to date,Maxim,MAX7456EUI+T,Obsolete,,,,
+,TLV76790QWDRBRQ1,IC OPAMP,U9,CMP-04917-000367-1,Up to date,Texas Instruments,TLV76790QWDRBRQ1,Volume Production,Mouser,595-TLV76790QWDRBRQ1,1.49,2.98
+,CSTCE8M00G55-R0,"Ceramic Resonator, 8 MHz, +/- 0.5%, -20 to 80 degC, 3-Pin SMD, RoHS, Tape and Reel",X1,CMP-2100-03620-1,Up to date,Murata,CSTCE8M00G55-R0,End of Life,,,,
+,ABM3-27.000MHZ-D2Y-T,Crystal 27MHz ±20ppm 18pF SMD-2 5mm x 3.2mm,Y2,CMP-27762-013610-1,Up to date,Abracon,ABM3-27.000MHZ-D2Y-T,Volume Production,Arrow Electronics,ABM3-27.000MHZ-D2Y-T,0.4012,0.4012
