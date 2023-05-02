@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: PCB1.GBR   4/30/2023  10:01:25 PM
+Gerber File Extension Report For: PCB1.GBR   5/1/2023  10:50:11 PM
 ------------------------------------------------------------------------------------------
 
 
@@ -7,12 +7,8 @@ Gerber File Extension Report For: PCB1.GBR   4/30/2023  10:01:25 PM
 Layer Extension     Layer Description                      
 ------------------------------------------------------------------------------------------
 .gbr                Top Layer                               
-.gbr                Layer 5                                 
-.gbr                Layer 3                                 
 .gbr                Layer 1                                 
 .gbr                Layer 2                                 
-.gbr                Layer 4                                 
-.gbr                Layer 6                                 
 .gbr                Bottom Layer                            
 .gbr                Top Overlay                             
 .gbr                Bottom Overlay                          
