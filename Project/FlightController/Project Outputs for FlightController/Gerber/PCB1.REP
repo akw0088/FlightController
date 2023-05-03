@@ -2,21 +2,67 @@
 FileName = PCB1.GBR
 AutoAperture = True
 *************************************************************
-Generating : Layer 1
-      File : PCB1.G1
+Generating : Top Layer
+      File : PCB1.GTL
 
-    Adding Layer      : Layer 1
+    Adding Layer      : Top Layer
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D15
-    D83
+    D11
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D58
+    D67
+    D79
+    D80
+    D82
     D86
+    D87
     D88
     D89
     D90
+    D91
+    D92
 *************************************************************
 
 *************************************************************
@@ -77,127 +123,6 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Layer 2
-      File : PCB1.G2
-
-    Adding Layer      : Layer 2
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-    D83
-    D86
-    D88
-    D89
-    D90
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : PCB1.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D17
-    D33
-    D35
-    D43
-    D53
-    D57
-    D70
-    D76
-    D80
-    D81
-    D82
-    D83
-    D84
-    D96
-    D97
-    D98
-    D100
-    D103
-    D105
-    D106
-    D107
-    D108
-    D109
-    D110
-    D111
-    D112
-    D113
-    D114
-*************************************************************
-
-*************************************************************
-Generating : Top Layer
-      File : PCB1.GTL
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D11
-    D15
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
-    D44
-    D45
-    D46
-    D47
-    D48
-    D49
-    D50
-    D52
-    D53
-    D54
-    D55
-    D70
-    D83
-    D85
-    D86
-    D87
-    D88
-    D89
-    D90
-*************************************************************
-
-*************************************************************
 Generating : Bottom Paste
       File : PCB1.GBP
 
@@ -209,16 +134,13 @@ Generating : Bottom Paste
 
 
 Used DCodes :
-    D14
-    D17
-    D33
-    D35
-    D43
-    D48
+    D29
+    D30
+    D37
+    D38
+    D52
     D53
-    D55
-    D91
-    D92
+    D54
     D93
     D94
     D95
@@ -229,50 +151,6 @@ Used DCodes :
     D100
     D101
     D102
-    D103
-    D104
-    D105
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : PCB1.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-    D17
-    D33
-    D35
-    D43
-    D48
-    D53
-    D55
-    D70
-    D83
-    D86
-    D88
-    D89
-    D90
-    D91
-    D92
-    D93
-    D94
-    D95
-    D96
-    D97
-    D98
-    D99
-    D100
-    D101
-    D102
-    D103
-    D104
-    D105
 *************************************************************
 
 *************************************************************
@@ -290,6 +168,44 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
+Generating : Bottom Solder
+      File : PCB1.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D37
+    D38
+    D52
+    D53
+    D54
+    D57
+    D65
+    D66
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+*************************************************************
+
+*************************************************************
 Generating : Bottom Overlay
       File : PCB1.GBO
 
@@ -299,7 +215,65 @@ Generating : Bottom Overlay
 Used DCodes :
     D10
     D12
-    D115
+    D110
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : PCB1.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D29
+    D30
+    D37
+    D38
+    D52
+    D53
+    D54
+    D80
+    D82
+    D86
+    D87
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+    D102
+*************************************************************
+
+*************************************************************
+Generating : Layer 1
+      File : PCB1.G1
+
+    Adding Layer      : Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D80
+    D82
+    D86
+    D89
+    D90
+    D91
+    D92
 *************************************************************
 
 *************************************************************
@@ -314,24 +288,25 @@ Generating : Top Solder
 
 
 Used DCodes :
-    D16
-    D17
     D18
-    D30
-    D31
+    D23
+    D24
+    D25
+    D28
     D33
     D34
     D35
     D36
     D37
     D38
-    D42
     D43
-    D45
-    D47
+    D44
     D50
+    D51
     D52
     D53
+    D54
+    D55
     D56
     D57
     D58
@@ -361,6 +336,28 @@ Used DCodes :
     D82
     D83
     D84
+    D85
+*************************************************************
+
+*************************************************************
+Generating : Layer 2
+      File : PCB1.G2
+
+    Adding Layer      : Layer 2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D80
+    D82
+    D86
+    D87
+    D89
+    D90
+    D91
+    D92
 *************************************************************
 
 *************************************************************
@@ -369,6 +366,6 @@ Generating : Profile
 
 
 Used DCodes :
-    D116
+    D111
 *************************************************************
 
