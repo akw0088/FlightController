@@ -16,6 +16,11 @@ Good video/channel on PCB design:
 
 https://www.youtube.com/watch?v=aVUqaB0IMh4
 
+Altium specific video (cross probing two windows is awesome):
+
+https://www.youtube.com/watch?v=PMEpQZ90f34
+
+
 Links to drone meshes stuff:
 
 https://oshwlab.com/mesh.drone/mesh-fc-v1-backup
@@ -25,6 +30,6 @@ https://www.pcbway.com/project/member/?bmbno=82F43017-E23A-4A
 https://www.youtube.com/c/DroneMesh
 
 
-Version with OSD chip:
+Drone mesh PCB with OSD chip (not sure he ever got it working):
 
 https://easyeda.com/modules/DroneMesh-OpenFC-Schematic_02d7d85512334af9a66e7b7c09a951f3
