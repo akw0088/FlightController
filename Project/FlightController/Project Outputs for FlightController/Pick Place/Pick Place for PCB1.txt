@@ -4,14 +4,13 @@ C:\Users\awright\Desktop\FlightController\Project\FlightController\Project Outpu
 ========================================================================================================================
 File Design Information:
 
-Date:       03/05/23
-Time:       22:26
-Revision:   40b5d27cf9cc466d803381079be00e10f08c219f
+Date:       04/05/23
+Time:       14:35
+Revision:   48a9d5eebe1c44fcc0cc83fd9d52eb9e05057527
 Variant:    No variations
 Units used: mil
 
 Designator Comment               Layer       Footprint                     Center-X(mil) Center-Y(mil) Rotation Description                                                                                                                                       
-J2         TC2030-CTX-NL         TopLayer    FP-TC2030-CTX-NL-MFG          157.480       255.906       90       "6-Pin “No legs” TC2030 Plug-of-Nails™ Cable for use with ARM Cortex processors"                                                                  
 U1         STM32F722RET6         TopLayer    FP-LQFP64-5W-IPC_A            1043.307      846.456       180      "IC MCU 32BIT 512KB FLASH 64LQFP"                                                                                                                 
 D?         BAT54C,215            TopLayer    FP-SOT23-MFG                  1732.283      944.882       0        "DIODE ARRAY SCHOTTKY 30V SOT23"                                                                                                                  
 C100nf_7   C0402C104K8PACTU      TopLayer    FP-C0402-BB-MFG               1348.424      925.197       270      "CAP CER 0.1UF 10V X5R 0402"                                                                                                                      
