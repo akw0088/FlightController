@@ -99,7 +99,7 @@ PcbPrintPreferences2=
 OutputType3=BOM_PartType
 OutputName3=Bill of Materials
 OutputCategory3=Report
-OutputDocumentPath3=FlightController.BomDoc
+OutputDocumentPath3=C:\Users\awright\Desktop\FlightController\Project\FlightController\FlightController.BomDoc
 OutputVariantName3=[No Variations]
 OutputEnabled3=1
 OutputEnabled3_OutputMedium1=0
@@ -154,12 +154,14 @@ OutputName7=NC Drill Files
 OutputCategory7=Fabrication
 OutputDocumentPath7=PCB1.PcbDoc
 OutputVariantName7=
-OutputEnabled7=0
+OutputEnabled7=1
 OutputEnabled7_OutputMedium1=0
 OutputEnabled7_OutputMedium2=0
-OutputEnabled7_OutputMedium3=0
+OutputEnabled7_OutputMedium3=5
 OutputEnabled7_OutputMedium4=0
 OutputDefault7=0
+Configuration7_Name1=OutputConfigurationParameter1
+Configuration7_Item1=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|GenerateSeparateViaTypeFiles=False|GenerateToolsByDrillSymbols=False|NumberOfDecimals=4|NumberOfUnits=4|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Metric|ZeroesMode=SuppressTrailingZeroes|DocumentPath=C:\Users\awright\Desktop\FlightController\Project\FlightController\PCB1.PcbDoc
 
 [PublishSettings]
 OutputFilePath2=C:\Users\Public\Documents\Altium\FlightController\.PDF

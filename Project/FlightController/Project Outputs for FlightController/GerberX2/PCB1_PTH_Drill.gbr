@@ -2,7 +2,7 @@
 G04 Layer_Color=0*
 %FSLAX45Y45*%
 %MOMM*%
-%TF.SameCoordinates,5BD77CCA-818C-4C80-BDB4-93E378685E21*%
+%TF.SameCoordinates,187CC7FC-778B-42B5-9AF4-C0F7B468B5EB*%
 %TF.FilePolarity,Positive*%
 %TF.FileFunction,Plated,1,6,PTH,Drill*%
 %TF.Part,Single*%
@@ -406,5 +406,5 @@ X1900000Y3550000D02*
 D03*
 Y3450000D02*
 D03*
-%TF.MD5,e49633e907718e3d0d8bbf87beec93cc*%
+%TF.MD5,f609097eee2655fa9c3071dee487b2cb*%
 M02*
