@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\awright\Desktop\FlightController\Project\FlightController\PCB1.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=pcb1-roundholes.txt|DrillLayers=gtl,gp1,g1,g2,gp2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=pcb1-slotholes.txt|DrillLayers=gtl,gp1,g1,g2,gp2,gbl
