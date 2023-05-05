@@ -1,12 +1,12 @@
 Altium Designer Pick and Place Locations
-C:\Users\awright\Desktop\Fresh\FlightController\Project\FlightController\Project Outputs for FlightController\Pick Place\Pick Place for PCB1.csv
+C:\Users\awright\Desktop\FlightController\Project\FlightController\Project Outputs for FlightController\Pick Place\Pick Place for PCB1.csv
 
 ========================================================================================================================
 File Design Information:
 
-Date:       04/05/23
-Time:       18:36
-Revision:   30cc80545ddaff3f67b721f5419ecc00b1d9b594
+Date:       05/05/23
+Time:       17:54
+Revision:   ec516f5054ef3790e4f9589bfb5ea22bb4db61ed
 Variant:    No variations
 Units used: mil
 
@@ -77,5 +77,5 @@ Units used: mil
 "5V","SML-210MTT86","TopLayer","FP-SML-210-MFG","147.637","1309.056","0","LED GREEN CLEAR 0805 SMD"
 "3.3V","SML-210MTT86","TopLayer","FP-SML-210-MFG","147.637","1151.574","0","LED GREEN CLEAR 0805 SMD"
 "Status","SML-210MTT86","TopLayer","FP-SML-210-MFG","147.637","1072.834","0","LED GREEN CLEAR 0805 SMD"
-"J1","105017-0001","TopLayer","USB-MICRO-B_V","232.283","856.299","270","Micro-USB B Receptacle, Right Angle, Bottom Mount, Surface Mount, with Solder Tabs, -30 to 85 degC, 5-Pin USB, RoHS, Tape and Reel"
+"J1","105017-0001","TopLayer","USB-MICRO-B_V","110.000","859.999","270","Micro-USB B Receptacle, Right Angle, Bottom Mount, Surface Mount, with Solder Tabs, -30 to 85 degC, 5-Pin USB, RoHS, Tape and Reel"
 "CD1","502774-0891","BottomLayer","MOLX-502774-0891_V","1754.921","1110.138","270","Micro SD Memory Card Connector, 0.5 A, 10 V (DC), -25 to 85 degC, 8-Pin SMT, RoHS, Tape and Reel"

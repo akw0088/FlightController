@@ -140,7 +140,7 @@ Generating : Int4 (PWR)
 
 Used DCodes :
     D63
-    D64
+    D66
     D67
     D69
     D70
@@ -163,13 +163,13 @@ Generating : Bottom Layer
 
 Used DCodes :
     D10
+    D24
     D25
-    D26
+    D33
     D34
-    D35
+    D49
     D50
     D51
-    D52
     D56
     D57
     D58
@@ -210,7 +210,7 @@ Generating : Bottom Overlay
 
 
 Used DCodes :
-    D89
+    D88
     D90
     D91
 *************************************************************
@@ -227,27 +227,27 @@ Generating : Top Solder
 
 
 Used DCodes :
-    D14
     D15
     D16
     D17
-    D24
-    D27
+    D18
+    D23
+    D26
+    D29
     D30
     D31
     D32
     D33
     D34
-    D35
+    D39
     D40
-    D41
+    D46
     D47
     D48
     D49
     D50
     D51
     D52
-    D53
     D58
     D92
     D93
@@ -290,11 +290,11 @@ Generating : Bottom Solder
 
 
 Used DCodes :
+    D33
     D34
-    D35
+    D49
     D50
     D51
-    D52
     D58
     D85
     D86
@@ -328,6 +328,7 @@ Generating : Top Paste
 
 
 Used DCodes :
+    D11
     D12
     D13
     D14
@@ -342,7 +343,7 @@ Used DCodes :
     D23
     D24
     D25
-    D26
+    D27
     D28
     D29
     D30
@@ -362,12 +363,11 @@ Used DCodes :
     D44
     D45
     D46
-    D47
+    D48
     D49
     D50
     D51
     D52
-    D53
     D126
     D127
     D128
@@ -385,13 +385,13 @@ Generating : Bottom Paste
 
 
 Used DCodes :
+    D24
     D25
-    D26
+    D33
     D34
-    D35
+    D49
     D50
     D51
-    D52
     D78
     D79
     D80
