@@ -4,15 +4,17 @@ C:\Users\awright\Desktop\FlightController\Project\FlightController\Project Outpu
 ========================================================================================================================
 File Design Information:
 
-Date:       05/05/23
-Time:       21:50
-Revision:   43e62deefe4de49f96e08ee663701d8d2f44bac3
+Date:       06/05/23
+Time:       10:54
+Revision:   30f76e5c24df291d0aa59cc8be838274821d3769
 Variant:    No variations
 Units used: mil
 
 Designator Comment               Layer       Footprint                     Center-X(mil) Center-Y(mil) Rotation Description                                                                                                                                       
+CC18pf_2   C0805C180J5GACTU      BottomLayer FP-C0805C-DN-MFG              300.000       575.000       90       "CAP CER 18PF 50V C0G/NP0 0805"                                                                                                                   
+C18pf_1    C0805C180J5GACTU      BottomLayer FP-C0805C-DN-MFG              295.000       360.000       270      "CAP CER 18PF 50V C0G/NP0 0805"                                                                                                                   
 U1         STM32F722RET6         TopLayer    FP-LQFP64-5W-IPC_A            1043.307      846.456       180      "IC MCU 32BIT 512KB FLASH 64LQFP"                                                                                                                 
-D?         BAT54C,215            TopLayer    FP-SOT23-MFG                  1732.283      944.882       0        "DIODE ARRAY SCHOTTKY 30V SOT23"                                                                                                                  
+D1         BAT54C,215            TopLayer    FP-SOT23-MFG                  1732.283      944.882       0        "DIODE ARRAY SCHOTTKY 30V SOT23"                                                                                                                  
 C100nf_7   C0402C104K8PACTU      TopLayer    FP-C0402-BB-MFG               1348.424      925.197       270      "CAP CER 0.1UF 10V X5R 0402"                                                                                                                      
 C100nf_6   C0402C104K8PACTU      TopLayer    FP-C0402-BB-MFG               1358.267      698.818       0        "CAP CER 0.1UF 10V X5R 0402"                                                                                                                      
 R8_LED     CRCW06032K00FKEA      TopLayer    RESC1609X50X30ML10T20         482.284       1072.834      0        ""                                                                                                                                                

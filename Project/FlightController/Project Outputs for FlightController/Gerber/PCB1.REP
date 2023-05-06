@@ -2,34 +2,17 @@
 FileName = PCB1.GBR
 AutoAperture = True
 *************************************************************
-Generating : Bottom Paste
-      File : PCB1.GBP
+Generating : Bottom Overlay
+      File : PCB1.GBO
 
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
+    Adding Layer      : Bottom Overlay
 
 
 Used DCodes :
-    D29
-    D30
-    D37
-    D38
-    D52
-    D53
-    D54
-    D111
-    D112
-    D113
-    D114
-    D115
-    D116
-    D117
-    D118
-    D119
-    D120
+    D10
+    D12
+    D129
+    D130
 *************************************************************
 
 *************************************************************
@@ -91,41 +74,36 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Solder
-      File : PCB1.GBS
+Generating : Top Overlay
+      File : PCB1.GTO
 
-    Adding Layer      : Bottom Solder
+    Adding Layer      : Top Overlay
 
-    Adding Layer      : Bottom Layer
+
+Used DCodes :
+    D10
+    D11
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Int2 (Sign)
+      File : PCB1.G1
+
+    Adding Layer      : Int2 (Sign)
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D37
-    D38
-    D52
-    D53
-    D54
-    D57
-    D65
-    D66
-    D80
-    D81
+    D16
     D82
-    D83
-    D84
-    D85
-    D118
-    D119
-    D120
-    D121
-    D122
-    D123
-    D124
-    D125
-    D126
-    D127
+    D86
+    D90
+    D91
+    D92
+    D93
+    D94
 *************************************************************
 
 *************************************************************
@@ -192,29 +170,26 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Overlay
-      File : PCB1.GBO
+Generating : Int1 (GND)
+      File : PCB1.GP1
 
-    Adding Layer      : Bottom Overlay
+    Adding Layer      : Int1 (GND)
 
-
-Used DCodes :
-    D10
-    D12
-    D128
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : PCB1.GTO
-
-    Adding Layer      : Top Overlay
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D10
-    D11
-    D12
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
 *************************************************************
 
 *************************************************************
@@ -253,6 +228,7 @@ Used DCodes :
     D118
     D119
     D120
+    D121
 *************************************************************
 
 *************************************************************
@@ -299,46 +275,35 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Int2 (Sign)
-      File : PCB1.G1
+Generating : Bottom Paste
+      File : PCB1.GBP
 
-    Adding Layer      : Int2 (Sign)
+    Adding Layer      : Bottom Paste
 
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D16
-    D82
-    D86
-    D90
-    D91
-    D92
-    D93
-    D94
-*************************************************************
-
-*************************************************************
-Generating : Int1 (GND)
-      File : PCB1.GP1
-
-    Adding Layer      : Int1 (GND)
+    Adding Layer      : Bottom Layer
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D95
-    D96
-    D97
-    D98
-    D99
-    D100
-    D101
-    D102
-    D103
-    D104
-    D105
+    D29
+    D30
+    D37
+    D38
+    D52
+    D53
+    D54
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+    D117
+    D118
+    D119
+    D120
+    D121
 *************************************************************
 
 *************************************************************
@@ -407,11 +372,50 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
+Generating : Bottom Solder
+      File : PCB1.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D37
+    D38
+    D52
+    D53
+    D54
+    D57
+    D65
+    D66
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D111
+    D119
+    D120
+    D121
+    D122
+    D123
+    D124
+    D125
+    D126
+    D127
+    D128
+*************************************************************
+
+*************************************************************
 Generating : Profile
       File : PCB1.GM
 
 
 Used DCodes :
-    D129
+    D131
 *************************************************************
 
