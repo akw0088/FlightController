@@ -5,8 +5,8 @@ C:\Users\awright\Desktop\FlightController\Project\FlightController\Project Outpu
 File Design Information:
 
 Date:       06/05/23
-Time:       10:54
-Revision:   30f76e5c24df291d0aa59cc8be838274821d3769
+Time:       12:29
+Revision:   5cb77688b61184330756697639a11a6a1e1b3c62
 Variant:    No variations
 Units used: mil
 
@@ -62,19 +62,18 @@ Units used: mil
 "C22uf_4","GRM21BR60J226ME39L","BottomLayer","FP-GRM21B-0_15-MFG","1013.775","334.644","0","Chip Multilayer Ceramic Capacitors for General Purpose, 0805, 22uF, X5R, 15%, 20%, 6.3V"
 "C10uf_2","GRM188R60J106ME47D","TopLayer","FP-GRM188-0_1-e0_2_0_55-IPC_A","1614.173","944.880","270","Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 10uF, X5R, 15%, 20%, 6.3V"
 "C10uf_4","GRM188R60J106ME47D","TopLayer","FP-GRM188-0_1-e0_2_0_55-IPC_A","1279.529","511.810","270","Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 10uF, X5R, 15%, 20%, 6.3V"
-"C2.2nf","GRM188R71H222KA01D","TopLayer","CAPC1608X90X35NL10T15","994.094","1397.636","180","Chip Capacitor, 2.2 nF, +/- 10%, 50 V, -55 to 125 degC, 0603 (1608 Metric), RoHS, Tape and Reel"
 "C0.1uf_8","GRM155R71C104KA88D","BottomLayer","FP-GRM15-MFG","905.513","403.544","90","CAP CER 0.1UF 16V X7R 0402"
 "C0.1uf_7","GRM155R71C104KA88D","BottomLayer","FP-GRM15-MFG","551.181","374.016","90","CAP CER 0.1UF 16V X7R 0402"
 "C0.1uf_6","GRM155R71C104KA88D","BottomLayer","FP-GRM15-MFG","905.511","511.810","90","CAP CER 0.1UF 16V X7R 0402"
 "C0.1uf_5","GRM155R71C104KA88D","BottomLayer","FP-GRM15-MFG","964.567","452.756","180","CAP CER 0.1UF 16V X7R 0402"
-"C0.1uf_2","GRM155R71C104KA88D","TopLayer","FP-GRM15-MFG","649.605","1368.110","90","CAP CER 0.1UF 16V X7R 0402"
-"C0.1uf_1","GRM155R71C104KA88D","TopLayer","FP-GRM15-MFG","787.403","1269.686","0","CAP CER 0.1UF 16V X7R 0402"
+"C0.1uf_2","GRM155R71C104KA88D","TopLayer","FP-GRM15-MFG","895.001","1435.000","270","CAP CER 0.1UF 16V X7R 0402"
+"C0.1uf_1","GRM155R71C104KA88D","TopLayer","FP-GRM15-MFG","879.999","1370.002","90","CAP CER 0.1UF 16V X7R 0402"
 "Y2","ABM3-27.000MHZ-D2Y-T","BottomLayer","FP-ABM3-MFG","433.075","511.813","90","Crystal 27MHz ±20ppm 18pF SMD-2 5mm x 3.2mm"
 "X1","CSTCE8M00G55-R0","TopLayer","MURA-CSTCE_G_A-3_V","1496.063","738.188","90","Ceramic Resonator, 8 MHz, +/- 0.5%, -20 to 80 degC, 3-Pin SMD, RoHS, Tape and Reel"
 "U6","LD1117S33TR","TopLayer","SOT-223_L","1456.694","452.755","270","Fixed Low Drop Positive Voltage Regulator, 3.3V, 4-Pin SOT-223, Tape and Reel"
 "U5","UA78L05CPK","TopLayer","SOT-89_N","1665.352","1131.893","180","IC REG LINEAR 5V 100MA SOT89-3"
 "U3","BMP280","TopLayer","FP-BMP280-MFG","482.284","1210.631","0","SENSOR PRESSURE ABS"
-"U2","MPU-6000","TopLayer","INSE-QFN-24_V","787.401","1397.638","270","3-Axis Gyroscope 3-Axis Accelerometer Motion Processing Unit with I2C and SPI, 2.5, 3 or 3.3 V, -40 to 85 degC, 24-Pin QFN, RoHS, Tape and Reel"
+"U2","BMI270","TopLayer","XDCR_BMI270","800.000","1405.000","90","Accelerometer, Gyroscope, 6 Axis Sensor IÂ²C, SPI Output"
 "9V","SML-210MTT86","TopLayer","FP-SML-210-MFG","147.637","1230.314","0","LED GREEN CLEAR 0805 SMD"
 "5V","SML-210MTT86","TopLayer","FP-SML-210-MFG","147.637","1309.056","0","LED GREEN CLEAR 0805 SMD"
 "3.3V","SML-210MTT86","TopLayer","FP-SML-210-MFG","147.637","1151.574","0","LED GREEN CLEAR 0805 SMD"
