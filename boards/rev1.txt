@@ -1,0 +1,3 @@
+Made by JLCPCB, for some reason some passive components weren't populated by their "engineer review", will manually add those. As well as the max chip (could have added it as a chinese copy AT7456, but it wasn't showing up under the part number I was using)
+
+Also, they didn't have the Texas Instruments LDO in stock, so manually adding that one
