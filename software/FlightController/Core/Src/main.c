@@ -83,32 +83,53 @@ static void MX_SPI3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-#define BMP280_ID_REG (0xD0)
-#define BMI270_ID_REG (0x00)
-char uart_buf[50];
+
+#include "bmp280.h"
+
+void delay_ms(uint32_t period_ms);
+int8_t i2c_reg_write(uint8_t i2c_addr, uint8_t reg_addr, uint8_t *reg_data, uint16_t length);
+int8_t i2c_reg_read(uint8_t i2c_addr, uint8_t reg_addr, uint8_t *reg_data, uint16_t length);
+int8_t spi_reg_write(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t length);
+int8_t spi_reg_read(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t length);
+void print_rslt(const char api_name[], int8_t rslt);
+
+
+#define BMP280_ID_REG (0x80 | 0xD0)
+#define BMI270_ID_REG (0x80 | 0x00)
+
+
+static const uint8_t TMP102_ADDR = 0x48 << 1;
+static const uint8_t REG_TEMP = 0x0;
+
+
+
+
+char uart_buf[128];
 int uart_buf_len;
-char spi_buf[20];
+char spi_buf[32];
+
 
 
 // BMP280 is SPI1 in the schematic, but CubeIDE has pin33 marked as SPI2
 // So, SPI1 means SPI2 here
 void bmp280_read_id_register()
 {
+	char data[4] = {0};
 
-  // Enable write enable latch (allow write operations)
-//  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
-//  HAL_SPI_Transmit(&hspi1, (uint8_t *)BMP280_ID_REG, 1, 100);
-//  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+	data[0] = BMP280_ID_REG;
+	data[1] = 0;
+
+
 
   // Read ID register
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-  HAL_SPI_TransmitReceive(&hspi2, (uint8_t *)BMP280_ID_REG, spi_buf, 1, 100);
-//  HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
+  HAL_SPI_Transmit(&hspi2, (uint8_t *)data, 1, 100);
+  HAL_SPI_Receive(&hspi2, (uint8_t *)spi_buf, 1, 100);
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
 
   // print out status register, should be 0x58
   uart_buf_len = sprintf(uart_buf, "BMP280 ID Reg: 0x%02X\r\n", (unsigned int)spi_buf[0]);
-  CDC_Transmit_FS(uart_buf, uart_buf_len);
+  CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
 }
 
 
@@ -123,17 +144,196 @@ void bmi270_read_id_register()
 
   // Read ID register
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
-  HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)BMI270_ID_REG, spi_buf, 1, 100);
+  HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)BMI270_ID_REG, (uint8_t *)spi_buf, 2, 100);
 //  HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
 
   // print out status register, should be 0x24
   uart_buf_len = sprintf(uart_buf, "BMI270 ID Reg: 0x%02X\r\n", (unsigned int)spi_buf[0]);
-  CDC_Transmit_FS(uart_buf, uart_buf_len);
+  CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+}
+
+int test_bmp280(void)
+{
+    int8_t rslt;
+    struct bmp280_dev bmp;
+
+    /* Map the delay function pointer with the function responsible for implementing the delay */
+    bmp.delay_ms = delay_ms;
+
+    bmp.dev_id = 0;
+    bmp.read = spi_reg_read;
+    bmp.write = spi_reg_write;
+    bmp.intf = BMP280_SPI_INTF;
+    rslt = bmp280_init(&bmp);
+    print_rslt(" bmp280_init status", rslt);
+
+    return 0;
 }
 
 
+void delay_ms(uint32_t period_ms)
+{
+	HAL_Delay(period_ms);
+}
+
+
+int8_t spi_reg_write(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t length)
+{
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+	HAL_SPI_Transmit(&hspi2, (uint8_t *)&reg_addr, 1, 100);
+	HAL_SPI_Transmit(&hspi2, (uint8_t *)reg_data, length, 100);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+
+    return -1;
+}
+
+
+int8_t spi_reg_read(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t length)
+{
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+	HAL_SPI_Transmit(&hspi2, (uint8_t *)&reg_addr, 1, 100);
+	HAL_SPI_Receive(&hspi2, (uint8_t *)reg_data, length, 100);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+    return -1;
+}
+
+
+void print_rslt(const char api_name[], int8_t rslt)
+{
+    if (rslt != BMP280_OK)
+    {
+        sprintf(uart_buf, "%s\t", api_name);
+    	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        if (rslt == BMP280_E_NULL_PTR)
+        {
+            sprintf(uart_buf, "Error [%d] : Null pointer error\r\n", (int)rslt);
+        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        }
+        else if (rslt == BMP280_E_COMM_FAIL)
+        {
+            sprintf(uart_buf, "Error [%d] : Bus communication failed\r\n", (int)rslt);
+        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        }
+        else if (rslt == BMP280_E_IMPLAUS_TEMP)
+        {
+            sprintf(uart_buf, "Error [%d] : Invalid Temperature\r\n", (int)rslt);
+        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        }
+        else if (rslt == BMP280_E_DEV_NOT_FOUND)
+        {
+            sprintf(uart_buf, "Error [%d] : Device not found\r\n", (int)rslt);
+        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        }
+        else
+        {
+            /* For more error codes refer "*_defs.h" */
+            sprintf(uart_buf, "Error [%d] : Unknown error code\r\n", (int)rslt);
+        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        }
+    }
+}
+
+
+
+void read_tmp102()
+{
+	HAL_StatusTypeDef ret;
+	char buf[32];
+	int16_t val;
+	float temp_c;
+
+	strcpy(buf, "Hello!\r\n");
+	HAL_UART_Transmit(&huart2, (uint8_t *)buf, strlen(buf), HAL_MAX_DELAY);
+
+
+	buf[0] = REG_TEMP;
+	ret = HAL_I2C_Master_Transmit(&hi2c1, TMP102_ADDR, (uint8_t *)buf, 1, HAL_MAX_DELAY);
+	if ( ret != HAL_OK)
+	{
+		strcpy(buf, "i2c tx error\r\n");
+	}
+	else
+	{
+		ret = HAL_I2C_Master_Receive(&hi2c1, TMP102_ADDR, (uint8_t *)buf, 2, HAL_MAX_DELAY);
+		if ( ret != HAL_OK)
+		{
+			strcpy(buf, "i2c rx error\r\n");
+		}
+
+		val = ( (int16_t)buf[0] << 4 | (buf[1] >> 4) );
+		if (val > 0x7FF )
+		{
+			val |= 0xF000;
+		}
+
+		temp_c = val * 0.0625;
+		temp_c *= 100;
+
+		sprintf(buf, "%u.%02u C\r\n",
+			((unsigned int)temp_c / 100),
+			((unsigned int)temp_c % 100));
+	}
+
+	HAL_UART_Transmit(&huart2, (uint8_t *)buf, strlen(buf), HAL_MAX_DELAY);
+}
+
+
+
+
 int test_enable = 0;
+
+
+#define	MCU_IRQS	70u
+
+void start_bootloader()
+{
+	void (*boot_jump)(void);
+
+	boot_jump = (void (*)(void))(*((uint32_t *)(0x1FFF0000 + 4)));
+
+	HAL_RCC_DeInit();
+	SysTick->CTRL = 0;
+	SysTick->LOAD = 0;
+	SysTick->VAL = 0;
+	__disable_irq();
+	SYSCFG->MEMRMP = 0x01;
+
+	__set_MSP(*(uint32_t *)0x1FFF0000);
+
+	boot_jump();
+
+/*
+
+	void (*boot_jump)(void);
+
+	boot_jump = (void (*)(void))(*((uint32_t *)(0x1FFF0000 + 4)));
+
+	HAL_DeInit();
+	__set_MSP(*(__IO uint32_t*)0x1FFF0000);
+
+	__disable_irq();
+
+	SysTick->CTRL = 0;
+
+	HAL_RCC_DeInit();
+	for (uint8_t i = 0; i < (MCU_IRQS + 31u) / 32; i++)
+	{
+		NVIC->ICER[i]=0xFFFFFFFF;
+		NVIC->ICPR[i]=0xFFFFFFFF;
+	}
+
+	__enable_irq();
+
+	*((unsigned long *)0x2004FFF0) = 0xDEADBEEF; // 320KB STM32F7xx
+	__DSB();
+
+	boot_jump();
+	*/
+}
+
+
+
 /* USER CODE END 0 */
 
 /**
@@ -142,6 +342,7 @@ int test_enable = 0;
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -165,19 +366,26 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USB_DEVICE_Init();
+
   MX_ADC1_Init();
   MX_ADC2_Init();
+
   MX_I2C1_Init();
+
   MX_SPI1_Init();
+  MX_SPI2_Init();
+  MX_SPI3_Init();
+
+  MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
-  MX_USART6_UART_Init();
-  MX_SPI2_Init();
   MX_UART4_Init();
   MX_UART5_Init();
-  MX_USART1_UART_Init();
-  MX_SPI3_Init();
+  MX_USART6_UART_Init();
+
   /* USER CODE BEGIN 2 */
+
+  __enable_irq();
 
 
   HAL_GPIO_TogglePin (LED1_GPIO_Port, LED1_Pin);
@@ -186,11 +394,13 @@ int main(void)
 
   // CS pin should be default high
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
 
 
   // Print something (probably will be too fast to connect and see?)
   uart_buf_len = sprintf(uart_buf, "STM32F7 main()\r\n");
-  CDC_Transmit_FS(uart_buf, uart_buf_len);
+  CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+
 
 
   /* USER CODE END 2 */
@@ -202,7 +412,14 @@ int main(void)
   	  if (test_enable)
 	  {
 		  bmp280_read_id_register();
+  		  test_bmp280();
 		  bmi270_read_id_register();
+
+		  if (test_enable == '`')
+		  {
+			  start_bootloader();
+		  }
+
 		  test_enable = 0;
 	  }
 

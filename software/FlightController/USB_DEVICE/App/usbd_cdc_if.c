@@ -267,7 +267,7 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   for(int i = 0; i < *Len; i++)
   {
 	  Buf[i] = toupper(Buf[i]);
-	  test_enable = 1;
+	  test_enable = Buf[i];
   }
 
   CDC_Transmit_FS(Buf,*Len);
