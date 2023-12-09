@@ -20,11 +20,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc_if.h"
-#include <ctype.h>
-
 
 /* USER CODE BEGIN INCLUDE */
-
+extern int test_enable;
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -269,6 +267,7 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   for(int i = 0; i < *Len; i++)
   {
 	  Buf[i] = toupper(Buf[i]);
+	  test_enable = 1;
   }
 
   CDC_Transmit_FS(Buf,*Len);
