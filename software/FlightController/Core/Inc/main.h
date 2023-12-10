@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#define SD_SPI_HANDLE hspi3
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -59,8 +59,14 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define LED0_Pin GPIO_PIN_15
 #define LED0_GPIO_Port GPIOC
+#define SPI1_CS_Pin GPIO_PIN_4
+#define SPI1_CS_GPIO_Port GPIOA
+#define SPI2_CS_Pin GPIO_PIN_12
+#define SPI2_CS_GPIO_Port GPIOB
 #define LED1_Pin GPIO_PIN_6
 #define LED1_GPIO_Port GPIOB
+#define SPI3_CS_Pin GPIO_PIN_7
+#define SPI3_CS_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
