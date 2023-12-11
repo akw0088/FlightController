@@ -1,3 +1,22 @@
 Made by JLCPCB, for some reason some passive components weren't populated by their "engineer review", will manually add those. As well as the max chip (could have added it as a chinese copy AT7456, but it wasn't showing up under the part number I was using)
 
 Also, they didn't have the Texas Instruments LDO in stock, so manually adding that one
+
+
+DFU mode works
+SWD works (debugging)
+USB in non-DFU mode works (seems to be intermittent, but could be my bad soldering)
+
+USB_DETECT pin does not match what the MCU expects
+	MCU Wants PA9, but we are using PB2 -- Has to do with being 5v tolerant
+SDCard works
+	SPI3 bus and CS, using MCU provided middleware FATFS and some SPI internet hacks someone posted
+
+TODO:
+	Check out if Gyro works
+	Check out if Baro works
+	Maybe check each UART out?
+	nothing on i2c, so nothing needed there
+	Determine why betaflight doesnt come up
+		Clocking issue? --  we have 8mhz HSE (external clock)
+			
