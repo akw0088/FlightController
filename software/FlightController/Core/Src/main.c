@@ -18,13 +18,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include <stdarg.h>
 #include "fatfs.h"
 #include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usbd_cdc_if.h"
+#include <stdarg.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -106,20 +106,29 @@ static const uint8_t REG_TEMP = 0x0;
 
 
 
-char uart_buf[128];
-int uart_buf_len;
 char spi_buf[32];
 
+void usb_printf(const char *fmt, ...)
+{
+  static char buffer[256];
+  va_list args;
+  va_start(args, fmt);
+  vsnprintf(buffer, sizeof(buffer), fmt, args);
+  va_end(args);
 
+  int len = strlen(buffer);
+
+  CDC_Transmit_FS((uint8_t *)buffer, len);
+}
 
 // BMP280 is SPI1 in the schematic, but CubeIDE has pin33 marked as SPI2
-// So, SPI1 in schematic means SPI2 here in software
-void SPI2_bmp280_read_id_register()
+// nope wrong, everything is SPI1, but they use SPI1_CS and SPI2_CS to select between BMP280 and BMI270
+void SPI1_bmp280_read_id_register()
 {
 	char data[4] = {0};
 
 	data[0] = BMP280_ID_REG;
-	data[1] = 0;
+	data[1] = BMP280_ID_REG;
 
 
 
@@ -127,50 +136,106 @@ void SPI2_bmp280_read_id_register()
 
 	// Set chip select low
 	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_RESET);
-//	HAL_Delay(50);
-	HAL_SPI_Transmit(&hspi2, (uint8_t *)&data[0], 1, HAL_MAX_DELAY);
-//	HAL_Delay(5);
-	HAL_SPI_Receive(&hspi2, (uint8_t *)&spi_buf[0], 4, HAL_MAX_DELAY);
-//	HAL_Delay(50);
+	HAL_Delay(1);
+	HAL_SPI_Transmit(&hspi1, (uint8_t *)&data[0], 1, 100);
+	HAL_SPI_Receive(&hspi1, (uint8_t *)&spi_buf[0], 1, 100);
+
+//	HAL_StatusTypeDef ret = HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)&data[0], (uint8_t *)&spi_buf[0], 2, 100);
+	//if (ret != HAL_OK)
+	//{
+	//	usb_printf("HAL_SPI_TransmitReceive failed %d\n", ret);
+//	}
+	HAL_Delay(1);
 	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
 
 	// print out status register, should be 0x58
-	uart_buf_len = sprintf(uart_buf, "BMP280 ID Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
+	usb_printf("BMP280 ID Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
 		  (unsigned int)spi_buf[0],
 		  (unsigned int)spi_buf[1],
 		  (unsigned int)spi_buf[2],
 		  (unsigned int)spi_buf[3]);
-  CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+}
+
+
+static BYTE my_xchg_spi (
+	BYTE dat	/* Data to send */
+)
+{
+	BYTE rxDat;
+    HAL_SPI_TransmitReceive(&hspi1, &dat, &rxDat, 1, 50);
+    return rxDat;
+}
+
+
+void SPI1_bmp280_read_id_register_xchg()
+{
+	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_RESET);
+	HAL_Delay(1);
+	spi_buf[0] = my_xchg_spi(0x80 | 0xD0);				/* Start + command index */
+	spi_buf[0] = my_xchg_spi(0x80 | 0xD0);				/* Start + command index */
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
+
+	usb_printf("BMP280 xchg Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
+		  (unsigned int)spi_buf[0],
+		  (unsigned int)spi_buf[1],
+		  (unsigned int)spi_buf[2],
+		  (unsigned int)spi_buf[3]);
+
+}
+
+void SPI1_bmi270_read_id_register_xchg()
+{
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_RESET);
+	HAL_Delay(1);
+	spi_buf[0] = my_xchg_spi(0x80 | 0x0);				/* Start + command index */
+	spi_buf[0] = my_xchg_spi(0x80 | 0x0);				/* Start + command index */
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_SET);
+
+	usb_printf("BMI270 xchg Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
+		  (unsigned int)spi_buf[0],
+		  (unsigned int)spi_buf[1],
+		  (unsigned int)spi_buf[2],
+		  (unsigned int)spi_buf[3]);
+
 }
 
 
 
+
+// Note: have to do this twice as the first time it just enables the interface from i2c to spi
 void SPI1_bmi270_read_id_register()
 {
 	char data[4] = {0};
 
-	data[0] = BMI270_ID_REG;
-	data[1] = 0;
+	data[0] = BMI270_ID_REG; // dummy value
+	data[1] = BMI270_ID_REG; // actual used value
 
 // Read ID register
 
 	// Set chip select low
 	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_RESET);
-//	HAL_Delay(50);
-	HAL_SPI_Transmit(&hspi1, (uint8_t *)&data[0], 1, HAL_MAX_DELAY);
-//	HAL_Delay(5);
-	HAL_SPI_Receive(&hspi1, (uint8_t *)&spi_buf[0], 4, HAL_MAX_DELAY);
-//	HAL_Delay(50);
+	HAL_Delay(1);
+	HAL_SPI_Transmit(&hspi1, (uint8_t *)&data[0], 1, 100);
+	HAL_SPI_Receive(&hspi1, (uint8_t *)&spi_buf[0], 1, 100);
+
+
+//	HAL_StatusTypeDef ret = HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)&data[0], (uint8_t *)&spi_buf[0], 2, 100);
+//	if (ret != HAL_OK)
+//	{
+//		usb_printf("HAL_SPI_TransmitReceive failed %d\n", ret);
+//	}
+	HAL_Delay(1);
 	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
 
 	// print out status register, should be 0x24
-	uart_buf_len = sprintf(uart_buf, "BMI270 ID Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
+	usb_printf("BMI270 ID Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
 		  (unsigned int)spi_buf[0],
 		  (unsigned int)spi_buf[1],
 		  (unsigned int)spi_buf[2],
 		  (unsigned int)spi_buf[3]);
-	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
-
 }
 
 
@@ -179,53 +244,55 @@ void SPI3_sdcard_read_id_register()
 {
 	char data[4] = {0};
 
-	data[0] = BMI270_ID_REG;
-	data[1] = 0;
+	data[0] = BMI270_ID_REG; // dummy value
+	data[1] = BMI270_ID_REG; // actual register
 
 // Read ID register
 
 	// Set chip select low
 	HAL_GPIO_WritePin(SPI3_CS_GPIO_Port, SPI3_CS_Pin, GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&hspi3, (uint8_t *)&data[0], 1, HAL_MAX_DELAY);
+	HAL_SPI_Transmit(&hspi3, (uint8_t *)&data[0], 2, HAL_MAX_DELAY);
 	HAL_SPI_Receive(&hspi3, (uint8_t *)&spi_buf[0], 4, HAL_MAX_DELAY);
 	HAL_GPIO_WritePin(SPI3_CS_GPIO_Port, SPI3_CS_Pin, GPIO_PIN_SET);
 
 
 	// print out status register, should be 0x24
-	uart_buf_len = sprintf(uart_buf, "SDCARD ID Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
+	usb_printf("SDCARD ID Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
 		  (unsigned int)spi_buf[0],
 		  (unsigned int)spi_buf[1],
 		  (unsigned int)spi_buf[2],
 		  (unsigned int)spi_buf[3]);
-	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
 
 }
 
 
 // this is uses SPI1, but uses the MAX_Chip select, which is shared with SPI bus 2
-void SPI1_max_analog_read_id_register()
+void SPI2_max_analog_read_id_register()
 {
-	char data[4] = {0};
+//	char data[4] = {0};
 
-	data[0] = BMI270_ID_REG;
-	data[1] = 0;
+//	data[0] = BMI270_ID_REG; // dummy
+//	data[1] = BMI270_ID_REG; // actual register read
 
 // Read ID register
 
 	// Set chip select low
-	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_RESET);
+	// need to solder this chip on really
+	/*
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_RESET);
 	HAL_SPI_Transmit(&hspi1, (uint8_t *)&data[0], 1, HAL_MAX_DELAY);
 	HAL_SPI_Receive(&hspi1, (uint8_t *)&spi_buf[0], 4, HAL_MAX_DELAY);
-	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
 
 	// print out status register, should be 0x24
-	uart_buf_len = sprintf(uart_buf, "MAX Analog ID Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
+	usb_printf("MAX Analog ID Reg: 0x%02X 0x%02X 0x%02X 0x%02X\r\n",
 		  (unsigned int)spi_buf[0],
 		  (unsigned int)spi_buf[1],
 		  (unsigned int)spi_buf[2],
 		  (unsigned int)spi_buf[3]);
-	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
-
+		  */
 }
 
 
@@ -244,6 +311,14 @@ int test_bmp280(void)
     rslt = bmp280_init(&bmp);
     print_rslt(" bmp280_init status", rslt);
 
+
+    struct bmp280_uncomp_data data;
+
+    bmp280_get_uncomp_data(&data, &bmp);
+
+	usb_printf("BMP280 API : %u temp %u pressureX\r\n",
+		  (unsigned int)data.uncomp_temp,
+		  (unsigned int)data.uncomp_press);
     return 0;
 }
 
@@ -256,10 +331,11 @@ void delay_ms(uint32_t period_ms)
 
 int8_t spi_reg_write(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t length)
 {
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&hspi2, (uint8_t *)&reg_addr, 1, 100);
-	HAL_SPI_Transmit(&hspi2, (uint8_t *)reg_data, length, 100);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_RESET);
+	HAL_Delay(1);
+	HAL_SPI_Transmit(&hspi1, (uint8_t *)reg_data, length, 100);
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
 
     return -1;
 }
@@ -267,10 +343,11 @@ int8_t spi_reg_write(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t l
 
 int8_t spi_reg_read(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t length)
 {
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&hspi2, (uint8_t *)&reg_addr, 1, 100);
-	HAL_SPI_Receive(&hspi2, (uint8_t *)reg_data, length, 100);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_RESET);
+	HAL_Delay(1);
+	HAL_SPI_Receive(&hspi1, (uint8_t *)reg_data, length, 100);
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
     return -1;
 }
 
@@ -279,33 +356,27 @@ void print_rslt(const char api_name[], int8_t rslt)
 {
     if (rslt != BMP280_OK)
     {
-        sprintf(uart_buf, "%s\t", api_name);
-    	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+    	usb_printf("%s\t", api_name);
         if (rslt == BMP280_E_NULL_PTR)
         {
-            sprintf(uart_buf, "Error [%d] : Null pointer error\r\n", (int)rslt);
-        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        	usb_printf("Error [%d] : Null pointer error\r\n", (int)rslt);
         }
         else if (rslt == BMP280_E_COMM_FAIL)
         {
-            sprintf(uart_buf, "Error [%d] : Bus communication failed\r\n", (int)rslt);
-        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        	usb_printf("Error [%d] : Bus communication failed\r\n", (int)rslt);
         }
         else if (rslt == BMP280_E_IMPLAUS_TEMP)
         {
-            sprintf(uart_buf, "Error [%d] : Invalid Temperature\r\n", (int)rslt);
-        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        	usb_printf("Error [%d] : Invalid Temperature\r\n", (int)rslt);
         }
         else if (rslt == BMP280_E_DEV_NOT_FOUND)
         {
-            sprintf(uart_buf, "Error [%d] : Device not found\r\n", (int)rslt);
-        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        	usb_printf("Error [%d] : Device not found\r\n", (int)rslt);
         }
         else
         {
             /* For more error codes refer "*_defs.h" */
-            sprintf(uart_buf, "Error [%d] : Unknown error code\r\n", (int)rslt);
-        	CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+        	usb_printf("Error [%d] : Unknown error code\r\n", (int)rslt);
         }
     }
 }
@@ -355,39 +426,24 @@ void read_tmp102()
 }
 
 
-void myprintf(const char *fmt, ...) {
-  static char buffer[256];
-  va_list args;
-  va_start(args, fmt);
-  vsnprintf(buffer, sizeof(buffer), fmt, args);
-  va_end(args);
 
-  int len = strlen(buffer);
-//  HAL_UART_Transmit(&huart2, (uint8_t*)buffer, len, -1);
-
-
-  CDC_Transmit_FS((uint8_t *)buffer, len);
-
-
-}
 
 // https://01001000.xyz/2020-08-09-Tutorial-STM32CubeIDE-SD-card/
 void test_sdcard()
 {
-	  myprintf("\r\n~ SD card demo by kiwih ~\r\n\r\n");
-
 	  HAL_Delay(1000); //a short delay is important to let the SD card settle
 
-	//some variables for FatFs
 	  FATFS FatFs; 	//Fatfs handle
 	  FIL fil; 		//File handle
 	  FRESULT fres; //Result after operations
 
 	  //Open the file system
 	  fres = f_mount(&FatFs, "", 1); //1=mount now
-	  if (fres != FR_OK) {
-		myprintf("f_mount error (%i)\r\n", fres);
-		while(1);
+
+	  if (fres != FR_OK)
+	  {
+		  usb_printf("f_mount error (%i)\r\n", fres);
+		  return;
 	  }
 
 	  //Let's get some statistics from the SD card
@@ -396,35 +452,43 @@ void test_sdcard()
 	  FATFS* getFreeFs;
 
 	  fres = f_getfree("", &free_clusters, &getFreeFs);
-	  if (fres != FR_OK) {
-		myprintf("f_getfree error (%i)\r\n", fres);
-		while(1);
+	  if (fres != FR_OK)
+	  {
+		  usb_printf("f_getfree error (%i)\r\n", fres);
+		  return;
 	  }
 
 	  //Formula comes from ChaN's documentation
 	  total_sectors = (getFreeFs->n_fatent - 2) * getFreeFs->csize;
 	  free_sectors = free_clusters * getFreeFs->csize;
 
-	  myprintf("SD card stats:\r\n%10lu KiB total drive space.\r\n%10lu KiB available.\r\n", total_sectors / 2, free_sectors / 2);
+	  usb_printf("SD card stats:\r\n%10lu KiB total drive space.\r\n%10lu KiB available.\r\n", total_sectors / 2, free_sectors / 2);
 
 	  //Now let's try to open file "test.txt"
 	  fres = f_open(&fil, "test.txt", FA_READ);
-	  if (fres != FR_OK) {
-		myprintf("f_open error (%i)\r\n");
-		while(1);
+
+	  if (fres != FR_OK)
+	  {
+		usb_printf("f_open error (%i)\r\n");
+		return;
 	  }
-	  myprintf("I was able to open 'test.txt' for reading!\r\n");
+
+	  usb_printf("I was able to open 'test.txt' for reading!\r\n");
 
 	  //Read 30 bytes from "test.txt" on the SD card
-	  BYTE readBuf[30];
+	  BYTE readBuf[30] = {0};
 
 	  //We can either use f_read OR f_gets to get data out of files
 	  //f_gets is a wrapper on f_read that does some string formatting for us
 	  TCHAR* rres = f_gets((TCHAR*)readBuf, 30, &fil);
-	  if(rres != 0) {
-		myprintf("Read string from 'test.txt' contents: %s\r\n", readBuf);
-	  } else {
-		myprintf("f_gets error (%i)\r\n", fres);
+
+	  if(rres != 0)
+	  {
+		  usb_printf("Read string from 'test.txt' contents: %s\r\n", readBuf);
+	  }
+	  else
+	  {
+		  usb_printf("f_gets error (%i)\r\n", fres);
 	  }
 
 	  //Be a tidy kiwi - don't forget to close your file!
@@ -432,20 +496,28 @@ void test_sdcard()
 
 	  //Now let's try and write a file "write.txt"
 	  fres = f_open(&fil, "write.txt", FA_WRITE | FA_OPEN_ALWAYS | FA_CREATE_ALWAYS);
-	  if(fres == FR_OK) {
-		myprintf("I was able to open 'write.txt' for writing\r\n");
-	  } else {
-		myprintf("f_open error (%i)\r\n", fres);
+
+	  if(fres == FR_OK)
+	  {
+		  usb_printf("I was able to open 'write.txt' for writing\r\n");
+	  }
+	  else
+	  {
+		  usb_printf("f_open error (%i)\r\n", fres);
 	  }
 
 	  //Copy in a string
-	  strncpy((char*)readBuf, "a new file is made!", 19);
+	  strncpy((char*)readBuf, "a new file is made!", 20);
 	  UINT bytesWrote;
 	  fres = f_write(&fil, readBuf, 19, &bytesWrote);
-	  if(fres == FR_OK) {
-		myprintf("Wrote %i bytes to 'write.txt'!\r\n", bytesWrote);
-	  } else {
-		myprintf("f_write error (%i)\r\n");
+
+	  if(fres == FR_OK)
+	  {
+		  usb_printf("Wrote %i bytes to 'write.txt'!\r\n", bytesWrote);
+	  }
+	  else
+	  {
+		  usb_printf("f_write error (%i)\r\n");
 	  }
 
 	  //Be a tidy kiwi - don't forget to close your file!
@@ -569,8 +641,7 @@ int main(void)
 
 
   // Print something (probably will be too fast to connect and see?)
-  uart_buf_len = sprintf(uart_buf, "STM32F7 main()\r\n");
-  CDC_Transmit_FS((uint8_t *)uart_buf, uart_buf_len);
+  usb_printf("STM32F7 main()\r\n");
 
 
 
@@ -600,7 +671,7 @@ int main(void)
 
 		  if (test_enable == '2')
 		  {
-			  SPI2_bmp280_read_id_register();
+			  SPI1_bmp280_read_id_register();
 		  }
 
 		  if (test_enable == '3')
@@ -610,12 +681,17 @@ int main(void)
 
 		  if (test_enable == '4')
 		  {
-			  SPI1_max_analog_read_id_register();
+			  SPI1_bmi270_read_id_register_xchg();
 		  }
 
 		  if (test_enable == '5')
 		  {
-			  SPI3_sdcard_read_id_register();
+			  test_bmp280();
+		  }
+
+		  if (test_enable == '6')
+		  {
+			  SPI1_bmp280_read_id_register_xchg();
 		  }
 
 
@@ -859,13 +935,13 @@ static void MX_SPI1_Init(void)
   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi1.Init.NSS = SPI_NSS_SOFT;
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
   hspi1.Init.CRCPolynomial = 7;
   hspi1.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-  hspi1.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
+  hspi1.Init.NSSPMode = SPI_NSS_PULSE_DISABLE;
   if (HAL_SPI_Init(&hspi1) != HAL_OK)
   {
     Error_Handler();
@@ -899,13 +975,13 @@ static void MX_SPI2_Init(void)
   hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi2.Init.NSS = SPI_NSS_SOFT;
-  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
+  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
   hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
   hspi2.Init.CRCPolynomial = 7;
   hspi2.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-  hspi2.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
+  hspi2.Init.NSSPMode = SPI_NSS_PULSE_DISABLE;
   if (HAL_SPI_Init(&hspi2) != HAL_OK)
   {
     Error_Handler();
@@ -939,13 +1015,13 @@ static void MX_SPI3_Init(void)
   hspi3.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi3.Init.NSS = SPI_NSS_SOFT;
-  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
+  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
   hspi3.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi3.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi3.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
   hspi3.Init.CRCPolynomial = 7;
   hspi3.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-  hspi3.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
+  hspi3.Init.NSSPMode = SPI_NSS_PULSE_DISABLE;
   if (HAL_SPI_Init(&hspi3) != HAL_OK)
   {
     Error_Handler();
