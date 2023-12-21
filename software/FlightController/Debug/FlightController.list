@@ -41,11 +41,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   000242ea  00000000  00000000  0006e18a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e1eb4  00000000  00000000  00092474  2**0
+ 19 .debug_str    000e1ed1  00000000  00000000  00092474  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00006d8c  00000000  00000000  00174328  2**2
+ 20 .debug_frame  00006d8c  00000000  00000000  00174348  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000053  00000000  00000000  0017b0b4  2**0
+ 21 .debug_line_str 00000070  00000000  00000000  0017b0d4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -3180,9 +3180,9 @@ static void MX_SPI1_Init(void)
  80015b0:	4b11      	ldr	r3, [pc, #68]	; (80015f8 <MX_SPI1_Init+0x74>)
  80015b2:	f44f 7200 	mov.w	r2, #512	; 0x200
  80015b6:	619a      	str	r2, [r3, #24]
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
  80015b8:	4b0f      	ldr	r3, [pc, #60]	; (80015f8 <MX_SPI1_Init+0x74>)
- 80015ba:	2200      	movs	r2, #0
+ 80015ba:	2238      	movs	r2, #56	; 0x38
  80015bc:	61da      	str	r2, [r3, #28]
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
  80015be:	4b0e      	ldr	r3, [pc, #56]	; (80015f8 <MX_SPI1_Init+0x74>)
@@ -3271,9 +3271,9 @@ static void MX_SPI2_Init(void)
  800162c:	4b11      	ldr	r3, [pc, #68]	; (8001674 <MX_SPI2_Init+0x74>)
  800162e:	f44f 7200 	mov.w	r2, #512	; 0x200
  8001632:	619a      	str	r2, [r3, #24]
-  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
  8001634:	4b0f      	ldr	r3, [pc, #60]	; (8001674 <MX_SPI2_Init+0x74>)
- 8001636:	2200      	movs	r2, #0
+ 8001636:	2238      	movs	r2, #56	; 0x38
  8001638:	61da      	str	r2, [r3, #28]
   hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
  800163a:	4b0e      	ldr	r3, [pc, #56]	; (8001674 <MX_SPI2_Init+0x74>)
@@ -3362,9 +3362,9 @@ static void MX_SPI3_Init(void)
  80016a8:	4b11      	ldr	r3, [pc, #68]	; (80016f0 <MX_SPI3_Init+0x74>)
  80016aa:	f44f 7200 	mov.w	r2, #512	; 0x200
  80016ae:	619a      	str	r2, [r3, #24]
-  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
  80016b0:	4b0f      	ldr	r3, [pc, #60]	; (80016f0 <MX_SPI3_Init+0x74>)
- 80016b2:	2200      	movs	r2, #0
+ 80016b2:	2238      	movs	r2, #56	; 0x38
  80016b4:	61da      	str	r2, [r3, #28]
   hspi3.Init.FirstBit = SPI_FIRSTBIT_MSB;
  80016b6:	4b0e      	ldr	r3, [pc, #56]	; (80016f0 <MX_SPI3_Init+0x74>)
