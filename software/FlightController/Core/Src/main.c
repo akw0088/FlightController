@@ -24,6 +24,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usbd_cdc_if.h"
+
 #include <stdarg.h>
 /* USER CODE END Includes */
 
@@ -139,12 +140,6 @@ void SPI1_bmp280_read_id_register()
 	HAL_Delay(1);
 	HAL_SPI_Transmit(&hspi1, (uint8_t *)&data[0], 1, 100);
 	HAL_SPI_Receive(&hspi1, (uint8_t *)&spi_buf[0], 1, 100);
-
-//	HAL_StatusTypeDef ret = HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)&data[0], (uint8_t *)&spi_buf[0], 2, 100);
-	//if (ret != HAL_OK)
-	//{
-	//	usb_printf("HAL_SPI_TransmitReceive failed %d\n", ret);
-//	}
 	HAL_Delay(1);
 	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
 
@@ -333,11 +328,12 @@ int8_t spi_reg_write(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t l
 {
 	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_RESET);
 	HAL_Delay(1);
+	HAL_SPI_Transmit(&hspi1, (uint8_t *)&reg_addr, 1, 100);
 	HAL_SPI_Transmit(&hspi1, (uint8_t *)reg_data, length, 100);
 	HAL_Delay(1);
 	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
 
-    return -1;
+    return 0;
 }
 
 
@@ -345,10 +341,11 @@ int8_t spi_reg_read(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t le
 {
 	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_RESET);
 	HAL_Delay(1);
+	HAL_SPI_Transmit(&hspi1, (uint8_t *)&reg_addr, 1, 100);
 	HAL_SPI_Receive(&hspi1, (uint8_t *)reg_data, length, 100);
 	HAL_Delay(1);
 	HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, GPIO_PIN_SET);
-    return -1;
+    return 0;
 }
 
 
@@ -424,6 +421,10 @@ void read_tmp102()
 
 	HAL_UART_Transmit(&huart2, (uint8_t *)buf, strlen(buf), HAL_MAX_DELAY);
 }
+
+
+
+
 
 
 
@@ -580,7 +581,6 @@ void start_bootloader()
 }
 
 
-
 /* USER CODE END 0 */
 
 /**
@@ -644,6 +644,13 @@ int main(void)
   usb_printf("STM32F7 main()\r\n");
 
 
+//  SPI1_bmi270_read_id_register();
+
+  test_bmp280();
+
+  SPI1_bmp280_read_id_register();
+
+  SPI1_bmi270_read_id_register();
 
   /* USER CODE END 2 */
 
@@ -693,6 +700,66 @@ int main(void)
 		  {
 			  SPI1_bmp280_read_id_register_xchg();
 		  }
+
+		  if (test_enable == '7')
+		  {
+			  static int init = 0;
+
+			  if (init == 0)
+			  {
+
+//				  TMP117_Initialization(hi2c1);
+
+				  uint16_t id = -1;
+
+//				  id = TMP117_get_ID_Register(hi2c1);
+
+			      static uint8_t sbuf[3] = { 0 };
+			      static uint8_t rbuf[3] = { 0 };
+			      sbuf[0] = 0x0F;
+
+			      uint16_t addr = 0x48<<1;
+
+
+			      HAL_I2C_Master_Transmit(&hi2c1, addr, sbuf, 1, HAL_MAX_DELAY);
+			      HAL_Delay(1);
+			      HAL_I2C_Master_Receive(&hi2c1, addr, rbuf, 2, HAL_MAX_DELAY);
+			      id = ((rbuf[0]<<8)|rbuf[1]);
+
+
+
+				  if (id == 0x0117)
+				  {
+					  usb_printf("tmp117 init pass\r\n");
+					  init = 1;
+
+				  }
+				  else
+				  {
+					  usb_printf("tmp117 init fail returned %X [%X, %X]\r\n", (int)id, rbuf[0], rbuf[1]);
+				  }
+
+
+			  }
+
+		      static uint8_t sbuf[3] = {0};
+		      static uint8_t rbuf[3] = {0};
+		      uint16_t addr = 0x48<<1;
+
+		      sbuf[0] = 0x0;
+
+		      HAL_I2C_Master_Transmit(&hi2c1, addr, sbuf, 1, HAL_MAX_DELAY);
+		      HAL_Delay(1);
+		      HAL_I2C_Master_Receive(&hi2c1, addr, rbuf, 2, HAL_MAX_DELAY);
+
+		      float temp =  ( (rbuf[0] << 8) | rbuf[1] ) * 0.0078125;
+
+		      int top = temp;
+
+		      usb_printf("Tmp117 Temp %d [%X, %X]\r\n", top, rbuf[0], rbuf[1]);
+
+		  }
+
 
 
 
@@ -1265,11 +1332,17 @@ static void MX_GPIO_Init(void)
                           |GPIO_PIN_9, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, SPI1_CS_Pin|GPIO_PIN_8|GPIO_PIN_15, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_10|GPIO_PIN_11
-                          |SPI2_CS_Pin|GPIO_PIN_15|LED1_Pin|SPI3_CS_Pin, GPIO_PIN_RESET);
+                          |GPIO_PIN_15|LED1_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, SPI2_CS_Pin|SPI3_CS_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8|GPIO_PIN_15, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PC13 LED0_Pin PC0 PC8
                            PC9 */
@@ -1286,21 +1359,35 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SPI1_CS_Pin PA8 PA15 */
-  GPIO_InitStruct.Pin = SPI1_CS_Pin|GPIO_PIN_8|GPIO_PIN_15;
+  /*Configure GPIO pin : SPI1_CS_Pin */
+  GPIO_InitStruct.Pin = SPI1_CS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(SPI1_CS_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PB0 PB1 PB10 PB11
-                           SPI2_CS_Pin PB15 LED1_Pin SPI3_CS_Pin */
+                           PB15 LED1_Pin SPI3_CS_Pin */
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_10|GPIO_PIN_11
-                          |SPI2_CS_Pin|GPIO_PIN_15|LED1_Pin|SPI3_CS_Pin;
+                          |GPIO_PIN_15|LED1_Pin|SPI3_CS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : SPI2_CS_Pin */
+  GPIO_InitStruct.Pin = SPI2_CS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SPI2_CS_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PA8 PA15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
