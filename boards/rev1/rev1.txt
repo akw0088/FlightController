@@ -12,11 +12,27 @@ USB_DETECT pin does not match what the MCU expects
 SDCard works
 	SPI3 bus and CS, using MCU provided middleware FATFS and some SPI internet hacks someone posted
 
-TODO:
 	Check out if Gyro works
 	Check out if Baro works
-	Maybe check each UART out?
-	nothing on i2c, so nothing needed there
+
+	SPI Communication between the BMP280 BMI270 and MAX OSD chip will not work on this revision
+		Accidentally connected SDI to SDI and SDO to SDO
+		Should connect SDI to SDO and SDO to SDI
+		Similar to RX to TX and TX to RX on a UART
+
+	Got lucky with the SD Card, because they didn't call their PINS SDI/SDO in the schematic
+
+
+TODO:
 	Determine why betaflight doesnt come up
 		Clocking issue? --  we have 8mhz HSE (external clock)
+
+	Maybe check each UART out?
+	nothing on i2c, so nothing needed there, could get an external SPI sensor and plug in if pins accessible someplace (might need a pullup or similar)
+
 			
+To fix in Rev2:
+	Use PA9 for USB Detect, not PB2
+	Ensure Tag connect pinout matches what the adapters expect (so 0.1" header jumpers are not needed)
+	Connect SDI/SDO correctly on Gyro, Baro, and MAX OSD Chip
+	Resolve betaflight boot issue with generic STM32F7 firmware
