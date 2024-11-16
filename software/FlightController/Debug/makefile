@@ -68,8 +68,8 @@ all: main-build
 main-build: FlightController.elf secondary-outputs
 
 # Tool invocations
-FlightController.elf FlightController.map: $(OBJS) $(USER_OBJS) C:\Users\awrig\Desktop\FlightController\software\FlightController\STM32F722RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "FlightController.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\awrig\Desktop\FlightController\software\FlightController\STM32F722RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FlightController.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+FlightController.elf FlightController.map: $(OBJS) $(USER_OBJS) G:\FlightController\FlightController\STM32F722RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "FlightController.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"G:\FlightController\FlightController\STM32F722RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FlightController.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
