@@ -1,0 +1,15 @@
+In the rev1 boards I got MOSI/MISO pins backwards to the Gyro and the Barometer (mainly because they renamed them SDI/SDO for political correctness)
+
+So, to fix them I used a NF.V2 Grinding Pen to cut the traces
+(probably overkill, as I could have probably just used a snap away razor knife to cut the traces, eg: https://www.youtube.com/watch?v=ozH2F3AX8BY)
+
+I suppose the grinding pen can get middle layer traces also if you are delicate
+
+Anyway, looking at the small size of these traces I think soldering to them would be pretty difficult, so I think between copper tape and conductive ink pen I can connect them more easily. Although the pen is kind of pricey at $60 and has a short shelf life of 18 months. (Bought this one: CW2200MTP)
+
+In summary: I ordered five rev1 boards, two have SMD component soldered up and work. (Not all components were pick and placed) Board one I shorted the voltage regulator, but can still be used for testing the Analog video OCD chip I believe. The next two boards had the SMD components soldered and work, and that leaves two untouched boards.
+
+Probably would have been faster to just order more boards with the trace fixed in software and worked with JLCPCB to get all the SMD components connected from factory. But I want Rev2 to be perfect or near perfect so the more I can test on rev1 the better.
+
+(That said I made rev1 in about a week while taking time off work when I had a wisdom tooth removed and probably should have reviewed the schematic more intensely prior to getting it made)
+
