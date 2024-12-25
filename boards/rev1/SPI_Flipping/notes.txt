@@ -13,3 +13,9 @@ Probably would have been faster to just order more boards with the trace fixed i
 
 (That said I made rev1 in about a week while taking time off work when I had a wisdom tooth removed and probably should have reviewed the schematic more intensely prior to getting it made)
 
+
+
+12/24/2024
+
+Added solder pen to the board for the SPI flip on the gyro only for now. Passes basic conductivity checks with a multimeter. Got really close to the vias but I lucked out, almost seems like a slight edge there preventing accidental bridging which is nice
+
